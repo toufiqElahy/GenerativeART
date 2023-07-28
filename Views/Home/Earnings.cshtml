@@ -1,0 +1,120 @@
+﻿<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>My Earnings</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user-store-area">
+    <!-- <div class="row">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="user-store-title text-center">
+             <h2><i class="fas fa-store-alt"></i> Store</h2>
+          </div>
+       </div>
+       </div> -->
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-12 col-12">
+            <div class="my-earnings-amount-box text-center">
+                <div class="my-earnings-amount-ico">
+                    <img src="public/images/no-earnings.png" alt="">
+                </div>
+                <div class="my-earnings-amount-info">
+                    <p class="theme-description">Total amount made</p>
+                    <h2>$<text id="usdAmnt">0.00</text></h2>
+                    <p class="theme-description">OR <text id="ethAmnt">0.00</text> CPAY</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-8 col-md-7 col-sm-12 col-12">
+
+            <div class="my-earnings-sales-box hide" id="ifEmpty">
+                <h3 class="user-small-title">All Records</h3>
+                <div class="my-earnings-no-sales text-center">
+                    <div class="user-no-record-icon">
+                        <i class="fas fa-money-bill-alt"></i>
+                    </div>
+                    <h2 class="user-title">No sales during this time.</h2>
+                    <p class="theme-description">You need help selling items, check out our <a href="#">guide to selling</a></p>
+                </div>
+            </div>
+            <div class="my-earnings-sales-box">
+                <h3 class="user-small-title">All Records</h3>
+                <div class="my-earnings-sales-area">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-6 col-md-12 col-sm-6 col-12 hide" id="template">
+                            <div class="my-earnings-sales-item text-center">
+                                <div class="my-earnings-sales-media">
+                                    <img src="public/images/category/art/art_1.png" alt="">
+                                </div>
+                                <div class="my-earnings-sales-info">
+                                    <h3 class="user-title">Orders test</h3>
+                                    <p class="theme-description earning-color">Sold For: <b id="bold">2.54</b> CPAY</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var ethUsdPrice = 0;
+    $.ajaxSetup({ async: false });
+    $.get('https://min-api.cryptocompare.com/data/price?fsym=eth&tsyms=usd', function (data) {
+        console.log(data)
+        ethUsdPrice = data.USD;
+        $.ajaxSetup({ async: true });
+    });
+
+      $(function () {
+          
+          fnc();
+      });
+    async function fnc() {
+
+        //var iface = new ethers.utils.Interface(abiAuction);
+        //event AuctionStatus(string indexed evntName,string indexed category,address msgSender, uint256 indexed auctionId,uint256 price,address coinpayUser);
+        var coinpayUser = '@ViewBag.address';
+        var account = '';//await signer.getAddress();
+        coinpayUser = coinpayUser == '' ? account : coinpayUser;
+        var filter = contractNFT.filters.AuctionStatus("AuctionSold", null, null, null, null, coinpayUser);
+
+        var events = await contractNFT.queryFilter(filter);
+        $('#Loading').html('');
+        var $template = $("#template");
+
+        events.map(async function (log) {
+            var auctionId = log.args.auctionId.toString();
+            var price = ethers.utils.formatEther(log.args.price.toString());
+            
+            $('#ethAmnt').text(parseFloat(price) + parseFloat($('#ethAmnt').text()));
+            $('#usdAmnt').text((parseFloat(price) * parseFloat(ethUsdPrice)).toFixed(2));
+            var url = await contractNFT.tokenURI(auctionId); console.log(url);
+                url = customIpfsPath(url); console.log(url);
+
+            $.ajaxSetup({ async: false });
+                $.get(url, function (data) {
+                    console.log(url);
+                    $template.find("img:first").attr('src', customIpfsPath(data.image));
+                    $template.find(".user-title:first").text(data.name);
+                    $template.find("#bold").text(price);
+
+                    $template.parent().append('<div class="col-xl-4 col-lg-6 col-md-12 col-sm-6 col-12">'+$template.html()+'</div>');
+                });
+            $.ajaxSetup({ async: true });
+            
+
+            //$('#ifEmpty').hide();
+            
+        });
+
+
+    }
+
+</script>

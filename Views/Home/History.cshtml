@@ -1,0 +1,92 @@
+﻿<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>History</h1>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="user-store-area">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="transaction-history-box">
+                <div class="transaction-history-table theme-table">
+                    <table id="example">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>TX Hash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="template" class="hide">
+                                <td class="date">Fri Apr 02 2021 05:18:43 GMT</td>
+                                <td><b class="type"></b></td>
+                                <td>
+                                    <div class="alert alert-success" role="alert">Success</div>
+                                </td>
+                                <td><a href="#" target="_blank" class="hash"></a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link src="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<script>
+      $(function () {
+
+          fnc();
+          
+      });
+    async function fnc() {
+
+        //var iface = new ethers.utils.Interface(abiAuction);
+        //event AuctionStatus(string indexed evntName,string indexed category,address msgSender, uint256 indexed auctionId,uint256 price,address coinpayUser);
+        var coinpayUser = '@ViewBag.address';
+        var account = '';//await signer.getAddress();
+        coinpayUser = coinpayUser == '' ? account : coinpayUser;
+        var filter = contractNFT.filters.AuctionStatus(null, null, null, null, null, coinpayUser);
+
+        var events = await contractNFT.queryFilter(filter); //console.log(events)
+        //events.sort(function (a, b) {
+        //    //var dateA = new Date(a.date), dateB = new Date(b.date)
+        //    return a.blockNumber - b.blockNumber
+        //});
+        $('#Loading').html('');
+        var $template = $("#template");
+
+        const inter = new ethers.utils.Interface(abiNFT)
+        events.map(async function (log) {
+            //console.log(log)
+            const tx = await provider.getTransaction(log.transactionHash); 
+            const decodedInput = inter.parseTransaction({ data: tx.data, value: tx.value }); //console.log()
+            //function_name: decodedInput.name,
+            //    from: tx.from,
+            //        to: decodedInput.args[0],
+            var auctionId = log.args.auctionId.toString();
+
+            var info = await provider.getBlock(tx.blockNumber);
+            var date1 = new Date(info.timestamp * 1000);
+
+            $template.find('.date:first').html(date1.toLocaleString());
+            $template.find('.type:first').html(decodedInput.name);
+            $template.find('.hash:first').html(log.transactionHash.substring(0, 20) + '...').attr('href', etherscanTx + log.transactionHash);
+
+            $template.parent().append('<tr>' + $template.html()+'</tr>');
+        });
+        //$("#example").dataTable();
+
+    }
+
+</script>

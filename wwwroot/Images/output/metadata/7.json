@@ -1,0 +1,22 @@
+{
+  "id": 7,
+  "dna": "2-0-2",
+  "image": "https://someurl.com/nft/7.png",
+  "name": "nft #7",
+  "filename": "7.png",
+  "description": "Made by NFT.net",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Shape",
+      "value": "Circle"
+    },
+    {
+      "trait_type": "Letter",
+      "value": "C"
+    }
+  ]
+}

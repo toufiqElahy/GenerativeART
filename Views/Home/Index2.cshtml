@@ -1,0 +1,139 @@
+﻿<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>Create Your KYC Based Unique NFT</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="user-store-area">
+   
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+        </div>
+        <div id="searchContainer" class="col-sm-12 col-md-6 text-center">
+            @using (Html.BeginForm("Index2", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="file1">Upload Profile Picture </label>
+                        <input type="file" class="form-control-file" id="file1" name="file1" required />
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <img id="blah" src="#" alt="Preview image" class="thumbnail" width="" height="200" />
+                </div>
+
+                <br />
+                <div class="form-group hide">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" class="form-control" required>
+                        <option selected value="identity">identity</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+
+                <br />
+                <div class="form-group hide">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="">
+                </div>
+
+                <div class="form-group hide">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                </div>
+
+                <div id="progress"></div>
+                <button email="@User.Identity.Name" id="btn-mintC" type="submit" class="btn btn-primary">Mint NFT</button>
+            }
+
+
+
+            <small id="errorMessage" class="form-text text-muted text-info" style="width:100%;display:none">
+                Error
+            </small>
+        </div>
+        <div class="col-sm-12 col-md-3">
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<script>
+    file1.onchange = evt => {
+        const [file] = file1.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+    }
+    async function fnc1() {
+        ///
+        var uniqueToken = await contractNFT.getTokenByIdentity('@ViewBag.address'); //alert('@ViewBag.address');
+        if (uniqueToken != 0) {
+            $('#btn-mintC').attr('disabled', true).html('Already Created');
+        }
+    }
+
+    $(function () {
+        fnc1();
+        var $form = $("form:last");
+        $form.validate({
+            rules: {
+                file1: {
+                    required: true,
+                    //accept: "image/*"
+                }
+            },
+            messages: {
+                file1: {
+                    //accept: "Please select Image File Only"
+                }
+            }
+        });
+        // load navbar and modal
+        //$("#app > .navbar").load("navbar-header.html");
+        // initialize smart contracts
+        //App.initContracts();
+      });
+</script>
+
+<script>
+    fnc();
+    async function fnc() {
+    console.log('@ViewBag.hash')
+    if ('@ViewBag.hash'!= "") {
+        var account = signer == null ? '@ViewBag.address' : await signer.getAddress();
+        $('#btn-mintC').attr('disabled', true);
+        var result = { hash: '' };
+    if (signer == null) {
+        var dt = iface.encodeFunctionData("kycBasedNft", ['@ViewBag.address', '@ViewBag.hash', '@ViewBag.metadata']);
+        result.hash = await nftApi(dt);
+
+    } else {
+        result = await contractNFT.connect(signer).kycBasedNft('@ViewBag.address', '@ViewBag.hash', '@ViewBag.metadata', { from: account });
+    }
+
+        const $progress = $('#progress');
+        $progress.addClass("spa-loader");
+        provider.waitForTransaction(result.hash).then((receipt) => {
+
+            $progress.removeClass("spa-loader")
+            document.getElementById('lnkInventory').click();//location.href = "/home/auctions";
+
+
+        });
+    }
+    }
+</script>

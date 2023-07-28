@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "dna": "1-2-0",
+  "image": "https://someurl.com/nft/1.png",
+  "name": "nft #1",
+  "filename": "1.png",
+  "description": "Made by NFT.net",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Shape",
+      "value": "Triangle"
+    },
+    {
+      "trait_type": "Letter",
+      "value": "A"
+    }
+  ]
+}

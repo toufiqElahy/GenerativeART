@@ -1,0 +1,97 @@
+﻿<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>Sold Item List</h1>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="user-store-area">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 hide" id="template">
+            <div class="sold-item-box sold-item-list-box">
+                <div class="user-store-box-main">
+                    <div class="user-store-item">
+                        <div class="user-store-media">
+                            <img src="public/images/category/template/art_4.png" alt="">
+                        </div>
+                        <div class="user-store-info">
+                            <h3 class="user-theme-title">Best B&W Template</h3>
+                            <ul class="clearfix">
+                                <li><span>Store: </span><text class="owner"></text> Store</li>
+                                <li><span>Token Id: </span><b class="tokenid"></b></li>
+                                <li><span>Sold To: </span><b class="soldTo"></b></li>
+                            </ul>
+                            <h2 class="item-price">$154.17</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+@{ 
+    char c = '@';
+}
+<script>
+    var ethUsdPrice = 0;
+    $.ajaxSetup({ async: false });
+    $.get('https://min-api.cryptocompare.com/data/price?fsym=eth&tsyms=usd', function (data) {
+        console.log(data)
+        ethUsdPrice = data.USD;
+        $.ajaxSetup({ async: true });
+    });
+
+      $(function () {
+
+          fnc();
+      });
+    var owner='@(User.Identity.IsAuthenticated? User.Identity.Name.Split(c)[0]:"")'
+    async function fnc() {
+
+        //var iface = new ethers.utils.Interface(abiAuction);
+        //event AuctionStatus(string indexed evntName,string indexed category,address msgSender, uint256 indexed auctionId,uint256 price,address coinpayUser);
+        var coinpayUser = '@ViewBag.address';
+        var account = '';//await signer.getAddress();
+        coinpayUser = coinpayUser == '' ? account : coinpayUser;
+        var filter = contractNFT.filters.AuctionStatus("AuctionSold", null, null, null, null, coinpayUser);
+
+        var events = await contractNFT.queryFilter(filter); //console.log(events)
+        $('#Loading').html('');
+        var $template = $("#template");
+
+        events.map(async function (log) {
+            var auctionId = log.args.auctionId.toString();
+            var price = ethers.utils.formatEther(log.args.price.toString());
+
+            //$('#ethAmnt').text(parseFloat(price) + parseFloat($('#ethAmnt').text()));
+            //$('#usdAmnt').text(parseFloat(price) * parseFloat(ethUsdPrice));
+            var url = await contractNFT.tokenURI(auctionId); console.log(url);
+                url = customIpfsPath(url); console.log(url);
+
+            $.ajaxSetup({ async: false });
+                $.get(url, function (data) {
+                    console.log(url);
+                    $template.find("img:first").attr('src', customIpfsPath(data.image));
+                    $template.find(".owner:first").text(owner);
+                    $template.find(".user-theme-title:first").text(data.name);
+                    $template.find(".tokenid:first").text(auctionId);
+                    $template.find(".soldTo:first").text(log.args.msgSender);
+                    $template.find(".item-price:first").text('$' + (parseFloat(price) * parseFloat(ethUsdPrice)).toFixed(2) + '(' + price + 'CPAY)');
+
+                    $template.parent().append('<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">'+$template.html()+'</div>');
+                });
+            $.ajaxSetup({ async: true });
+
+
+            //$('#ifEmpty').hide();
+
+        });
+
+
+    }
+
+</script>

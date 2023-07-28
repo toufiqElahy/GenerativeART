@@ -1,0 +1,285 @@
+﻿@model List<Nft>
+
+<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>NFTs Of Your Injected Wallet</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user-store-area">
+    <div class="">
+        <div class="row hide" id="transferForm">
+            <div class="">
+                <form id="" class="form-inline">
+                    <div class="input-group">
+                        <input type="hidden" value="" id="tokenId" />
+                        <input type="text" required="" class="form-control" id="addr" placeholder="wallet address...(0x....)" value="">
+                    </div>
+
+                    <button id="btn-transfer" type="button" class="btn btn-success">Transfer Ownership</button>
+                    <button id="btn-cancel" type="button" class="btn btn-warning">Cancel</button>
+                    <hr />
+                </form>
+            </div>
+        </div>
+
+        <div id="accNumberRow" class="row">
+            <div id="unique" class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 hide">
+                <div class="item-group current-item-box panel-body">
+
+                    <div class="item-group-content">
+                        <div class="item-group-avtar number">
+                            <img src="public/images/category/art/art_4.png" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="Loading">Loading...</div>
+
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                    <div id="@item.id" category="@item.category" hash="@item.hash" hash3="@(item.secretLink+"")" hash2="@item.metadata"></div>
+
+                    <div class="item-group current-item-box">
+                        <div class="item-view-box">
+                            <span><i class="fas fa-eye"></i> 2</span>
+                        </div>
+                        <div class="item-group-content">
+                            <div class="item-group-avtar">
+                                <img src="@Nftcrud.customIpfsUrl(item.image)" height="200px" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="@(string.IsNullOrEmpty(item.secretLink)? Nftcrud.customIpfsUrl(item.image):Nftcrud.customIpfsUrl(item.secretLink))" target="_blank">Digital Content Link</a>
+
+                            </div>
+                            <h3 class="user-theme-title">@item.name</h3>
+                            <p class="theme-description">@item.description</p>
+                            <ul>
+                                <li><span>Category</span> @item.category</li>
+                                <li><span>Status</span> @item.status</li>
+                            </ul>
+                            <h2 class="item-price"></h2>
+                            <div class="item-group-btn">
+                                @if (item.status == "Approved")
+                                {
+
+                                    <button guid="@item.id" class="btn btn-success init-sell btnsellAuction"
+                                            type="button">
+                                        Publish On Auction
+                                    </button>
+                                }
+                                else
+                                {
+                                    <a href="/home/NftDelete?publish=false&id=@item.id" class="btn btn-danger">
+                                        Delete
+                                    </a>
+                                }
+                                @*<a class="theme-btn transparent-btn" href="7mcq4lo-csmj.html">Edit</a>
+                                    <a class="theme-btn transparent-btn" href="javascript:void(0);" data-toggle="modal" data-target="#listing-cancel">Cancel</a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div id="accNumberTemplate" style="display:none;">
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+
+        <div class="item-group current-item-box panel-body">
+            <div class="item-view-box">
+                <span><i class="fas fa-eye"></i> 2</span>
+            </div>
+            <div class="item-group-content">
+                <div class="item-group-avtar number">
+                    <img src="public/images/category/art/art_4.png" alt="">
+                </div>
+                <h3 class="user-theme-title">Mirage Illustration Of White And Red Strips</h3>
+                <p class="theme-description">This mirage illustration of white and red strips will blow your mind and with its dilusional characterstics it will look.</p>
+                @*<ul>
+                        <li><span>Store</span> Mintable Gasless store</li>
+                        <li><span>Bids</span> 1</li>
+                    </ul>
+                    <h2 class="item-price">$154.17</h2>*@
+
+                @if (User.Identity.IsAuthenticated)
+                {
+
+            <div class="item-group-btnv">
+                <button class="btn btn-success init-sell btnsellAuction"
+                        type="button">
+                    Sell On Auction
+                </button>
+                <button class="btn btn-danger btndelAuction"
+                        type="button">
+                    Delete On Auction
+                </button>
+                <button class="btn btn-warning btnSellToBidder"
+                        data-auction-id=""
+                        type="button">
+                    Sell to Bidder
+                </button>
+                <button class="btn btn-info btnTransfer"
+                        type="button">
+                    Transfer
+                </button>
+                <button class="btn btn-danger btnDelete"
+                        type="button">
+                    Delete
+                </button>
+            </div>
+                    <div class="item-group-btnv">
+                        @*<a style="width: 100%;padding: 14px 15px;" class="theme-btn" href="view-detail.html">No Reactions</a>*@
+                        
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@{ Html.RenderPartial("_create-auction-modal");}
+
+
+<script src="~/src/js/inventory.js?v=6"></script>
+
+<script>
+    var viewBagAddress = '@ViewBag.address';
+        $(function () {
+
+
+            fnc();
+
+        });
+
+
+        async function fnc() {
+              ///
+            var uniqueToken = 0;
+            if ('@User.Identity.IsAuthenticated' == 'True') {
+                uniqueToken = await contractNFT.getTokenByIdentity('@ViewBag.address');
+                if (uniqueToken != 0) {
+                    var url = await contractNFT.tokenURI(uniqueToken);
+                    url = customIpfsPath(url);
+                    $.get(url, function (data) {
+                        //console.log(data.image+ ' ght')
+                        $('#unique').removeClass('hide').find('.number:first').html('<img src="' + customIpfsPath(data.image) + '" height="200px" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="' + customIpfsPath(data.image) + '" target="_blank">Profile Picture</a>')
+
+                    });
+                }
+            }
+
+            ///
+
+
+            var account = signer == null? '@ViewBag.address': await signer.getAddress();
+            
+
+            var balance = await contractNFT.balanceOf(account);//.then((instance) => {
+            balance = balance.toNumber();
+            console.log(balance)
+            if (balance == 0) {
+                $('#Loading').html('');
+                return;
+            }
+            let i = 0;
+
+            let getOwnedNFT = async (i) => {
+                console.log(`calling getOwnedNFT() with i = ${i}`)
+                var number = await contractNFT.tokenOfOwnerByIndex(account, i);//.then((instance) => {
+                number = number.toNumber();
+                var url = await contractNFT.tokenURI(number);
+                url = customIpfsPath(url);
+                console.log(`found url ${url}`)
+
+
+                // add thousands seperators
+                //let formattedNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                // append number to dom
+                const accNumberRow = $('#accNumberRow');
+                const accNumberTemplate = $('#accNumberTemplate')
+                $.ajaxSetup({ async: false });
+                $.get(url, function (data) {
+                    //console.log(data.image+ ' ght')
+                    accNumberTemplate.find('.panel-body .number').html('<img src="' + customIpfsPath(data.image) + '" height="200px" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="' + customIpfsPath(data.image) + '" target="_blank">Digital Content Link</a>')
+
+
+                    //accNumberTemplate.find('.panel-body .number').text(formattedNumber)
+                    console.log('bbgg' + number)
+                    //accNumberTemplate.find('.panel-number .number').attr('data-token-id', number)
+                    ////accNumberTemplate.find('.panel-number button').attr('data-token-id', number)
+                    accNumberTemplate.find('.user-theme-title').html(data.name);
+                    accNumberTemplate.find('.theme-description').html(data.description)
+
+                    accNumberTemplate.find('.btnsellAuction').hide().attr('data-token-id', number);
+                    accNumberTemplate.find('.btndelAuction').hide().attr('data-token-id', number);
+                    accNumberTemplate.find('.btnSellToBidder').hide().attr('data-token-id', number);
+                    accNumberTemplate.find('.btnTransfer').hide().attr('data-token-id', number);
+                    accNumberTemplate.find('.btnDelete').hide().attr('data-token-id', number);
+                    accNumberRow.append(accNumberTemplate.html()); $('#Loading').html('');
+                });
+                $.ajaxSetup({ async: true });
+
+                //var o = await contractAuction.isTokenExist(number);//.then((instance) => {
+                var obj = await contractNFT.getAuctionByAuctionId(number);
+                if (obj.isActive == true) {
+
+                    //var obj = await contractAuction.getAuctionByTokenId(number);//.then((instance) => {
+                    console.log(obj);
+                    var auctionId = number;
+                    var cnt = await contractNFT.getBidsCount(auctionId);//.then((instance) => {
+                    console.log(cnt.toString() + ' cnt')
+                    console.log(parseInt(cnt.toString()) > 0);
+                    var currentPrice = await contractNFT.getCurrentPriceByAuctionId(auctionId);//.then((instance) => {
+
+                    currentPrice = currentPrice.toString(); console.log(currentPrice)//220000000000000000
+                    currentPrice = ethers.utils.formatEther(currentPrice); console.log(currentPrice)//0.22
+                    var txt = '';
+                    if (currentPrice == 0) {
+                        txt = '(Auction Ended)';
+                    }
+                    if (parseInt(cnt.toString()) > 0) {
+
+                        accNumberRow.find('.btnSellToBidder[data-token-id="' + number + '"]').show().text('Sell to Bidder' + txt).attr('data-auction-id', auctionId);
+                    } else {
+
+                        accNumberRow.find('.btndelAuction[data-token-id="' + number + '"]').show().text('Delete On Auction' + txt).attr('data-auction-id', auctionId);
+                    }
+
+
+
+                } else {
+                    accNumberRow.find('.btnsellAuction[data-token-id="' + number + '"]').show();
+                    accNumberRow.find('.btnTransfer[data-token-id="' + number + '"]').show();
+                    accNumberRow.find('.btnDelete[data-token-id="' + number + '"]').show();
+
+                }
+
+
+
+
+                i++
+                if (i < balance) {
+                    getOwnedNFT(i)
+                }
+            }
+            getOwnedNFT(i)
+        }
+</script>
+
+

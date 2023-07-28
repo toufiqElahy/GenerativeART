@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Infura IPFS CORS issue</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://unpkg.com/ipfs-http-client@30.1.3/dist/index.js"></script>
+    <script src="https://bundle.run/buffer@5.2.1"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/buffer@5.4.3/index.js"></script>
+  </head>
+  <body>
+
+    <h3>readAsArrayBuffer to Buffer to Infura to IPFS</h3>
+
+    <input type="file" id="upload">
+
+    <div id="link"></div> <!-- markup created after upload -->
+
+    <script>
+     
+
+        const ipfs = window.IpfsHttpClient('ipfs.infura.io', '5001', { protocol: 'https' });
+       
+
+
+
+        $("#upload").on("change",async function() {
+          
+            var hash=await test2();
+            console.log(hash[0].hash);
+        })
+
+        async function test(){
+            var reader = new FileReader();
+            
+            reader.onload =async function (e) {
+            console.log('aaa')
+                const magic_array_buffer_converted_to_buffer = buffer.Buffer(reader.result); // honestly as a web developer I do not fully appreciate the difference between buffer and arrayBuffer 
+                console.log(magic_array_buffer_converted_to_buffer);
+                var rslt= await ipfs.add(magic_array_buffer_converted_to_buffer,{pin: true});
+                console.log(rslt[0].hash)
+                return rslt[0].hash;
+            }
+            console.log('aaabbb')
+            reader.readAsArrayBuffer(document.getElementById("upload").files[0]);
+
+        }
+
+
+        function test2(file) {
+  return new Promise((resolve, reject) => {
+    let reader = new FileReader();
+
+    reader.onload = () => {
+      
+      const magic_array_buffer_converted_to_buffer = buffer.Buffer(reader.result); // honestly as a web developer I do not fully appreciate the difference between buffer and arrayBuffer 
+                //console.log(magic_array_buffer_converted_to_buffer);
+                
+                resolve(ipfs.add(magic_array_buffer_converted_to_buffer));
+                //console.log(b);
+    };
+
+    reader.onerror = reject;
+
+    reader.readAsArrayBuffer(document.getElementById("upload").files[0]);
+  })
+}
+    </script>
+
+  </body>
+</html>
+

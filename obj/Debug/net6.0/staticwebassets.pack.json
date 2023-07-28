@@ -1,0 +1,1725 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\SPA\\inline.gif",
+      "PackagePath": "staticwebassets\\Content\\SPA\\inline.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\SPA\\loading.gif",
+      "PackagePath": "staticwebassets\\Content\\SPA\\loading.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\SPA\\readme.txt",
+      "PackagePath": "staticwebassets\\Content\\SPA\\readme.txt"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\SPA\\sm-loader.gif",
+      "PackagePath": "staticwebassets\\Content\\SPA\\sm-loader.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\SPA\\toufiqElahySPA.css",
+      "PackagePath": "staticwebassets\\Content\\SPA\\toufiqElahySPA.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\SPA\\toufiqElahySPA.js",
+      "PackagePath": "staticwebassets\\Content\\SPA\\toufiqElahySPA.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\Site.css",
+      "PackagePath": "staticwebassets\\Content\\Site.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap-theme.css",
+      "PackagePath": "staticwebassets\\Content\\bootstrap-theme.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap-theme.css.map",
+      "PackagePath": "staticwebassets\\Content\\bootstrap-theme.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap-theme.min.css",
+      "PackagePath": "staticwebassets\\Content\\bootstrap-theme.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap-theme.min.css.map",
+      "PackagePath": "staticwebassets\\Content\\bootstrap-theme.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap.css",
+      "PackagePath": "staticwebassets\\Content\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\Content\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Content\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\Content\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Content\\siteLogin.css",
+      "PackagePath": "staticwebassets\\Content\\siteLogin.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\01-background\\blue+1.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\01-background\\blue+1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\01-background\\green+2.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\01-background\\green+2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\01-background\\red+3.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\01-background\\red+3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\02-shape\\circle+1.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\02-shape\\circle+1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\02-shape\\rectangle+2.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\02-shape\\rectangle+2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\02-shape\\triangle+3.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\02-shape\\triangle+3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\03-letter\\A+1.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\03-letter\\A+1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\03-letter\\B+2.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\03-letter\\B+2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\Images\\layers\\03-letter\\C+3.png",
+      "PackagePath": "staticwebassets\\Images\\layers\\03-letter\\C+3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\7mcq4lo-csmj.html",
+      "PackagePath": "staticwebassets\\nft\\7mcq4lo-csmj.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\arabik\\index.html",
+      "PackagePath": "staticwebassets\\nft\\arabik\\index.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\art.html",
+      "PackagePath": "staticwebassets\\nft\\art.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\css\\all.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400d41d.eot",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-brands-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400d41d.eot",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-regular-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900d41d.eot",
+      "PackagePath": "staticwebassets\\nft\\assets\\fontawesome\\webfonts\\fa-solid-900d41d.eot"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\bidding-history.html",
+      "PackagePath": "staticwebassets\\nft\\bidding-history.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\browse.html",
+      "PackagePath": "staticwebassets\\nft\\browse.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\checkout.html",
+      "PackagePath": "staticwebassets\\nft\\checkout.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\collectibles.html",
+      "PackagePath": "staticwebassets\\nft\\collectibles.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\contact.html",
+      "PackagePath": "staticwebassets\\nft\\contact.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\create-store.html",
+      "PackagePath": "staticwebassets\\nft\\create-store.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\current-item-list.html",
+      "PackagePath": "staticwebassets\\nft\\current-item-list.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\dark-author.html",
+      "PackagePath": "staticwebassets\\nft\\dark-author.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\dashboard.html",
+      "PackagePath": "staticwebassets\\nft\\dashboard.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\discover.html",
+      "PackagePath": "staticwebassets\\nft\\discover.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\domains.html",
+      "PackagePath": "staticwebassets\\nft\\domains.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\faq.html",
+      "PackagePath": "staticwebassets\\nft\\faq.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\forgot-password.html",
+      "PackagePath": "staticwebassets\\nft\\forgot-password.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\game-items.html",
+      "PackagePath": "staticwebassets\\nft\\game-items.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\gasless.html",
+      "PackagePath": "staticwebassets\\nft\\gasless.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\go-pro.html",
+      "PackagePath": "staticwebassets\\nft\\go-pro.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\history.html",
+      "PackagePath": "staticwebassets\\nft\\history.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\index-2.html",
+      "PackagePath": "staticwebassets\\nft\\index-2.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\index.html",
+      "PackagePath": "staticwebassets\\nft\\index.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\item-list.html",
+      "PackagePath": "staticwebassets\\nft\\item-list.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\login.html",
+      "PackagePath": "staticwebassets\\nft\\login.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\messages.html",
+      "PackagePath": "staticwebassets\\nft\\messages.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\min-item.html",
+      "PackagePath": "staticwebassets\\nft\\min-item.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\music.html",
+      "PackagePath": "staticwebassets\\nft\\music.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\my-earnings.html",
+      "PackagePath": "staticwebassets\\nft\\my-earnings.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\my-orders.html",
+      "PackagePath": "staticwebassets\\nft\\my-orders.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\my-wallet.html",
+      "PackagePath": "staticwebassets\\nft\\my-wallet.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\privacy-policy.html",
+      "PackagePath": "staticwebassets\\nft\\privacy-policy.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\proposals.html",
+      "PackagePath": "staticwebassets\\nft\\proposals.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\proposals_1.html",
+      "PackagePath": "staticwebassets\\nft\\proposals_1.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\blueberry.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\blueberry.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\color.min.css",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\color.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\green.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\green.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\light-pink.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\light-pink.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\orrange.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\orrange.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\picton-blue.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\picton-blue.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\red.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\red.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\rose.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\rose.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\violet.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\violet.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\violets.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\violets.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\walls.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\walls.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\color\\whiskey.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\color\\whiskey.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\dark-chat.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\dark-chat.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\dark-user-panel.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\dark-user-panel.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\login.min.css",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\login.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\owl.video.play.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\owl.video.play.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\site.min.css",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\site.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\slider-animation.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\slider-animation.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\user-panel-rtl.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\user-panel-rtl.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\css\\user-panel.min.css",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\css\\user-panel.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\images\\default-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\images\\default-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\images\\default-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\images\\default-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\js\\custom.min.js",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\js\\custom.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\js\\libs\\animate.css\\4.1.1\\animate.min.css",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\js\\libs\\animate.css\\4.1.1\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\js\\libs\\jqueryui\\1.12.0\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\js\\libs\\jqueryui\\1.12.0\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\js\\nft-marketplace.min.js",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\js\\nft-marketplace.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\assets\\js\\user-custom.min.js",
+      "PackagePath": "staticwebassets\\nft\\public\\assets\\js\\user-custom.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\about-responsive.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\about-responsive.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\about.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\about.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\addfiles.svg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\addfiles.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\art_4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\art_4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\art_detail_7.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\art_detail_7.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\artist-responsive.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\artist-responsive.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\author-1.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\author-1.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\author-5.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\author-5.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\badges.svg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\badges.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\banner.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\blueberry-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\blueberry-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\blueberry-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\blueberry-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_6.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_6.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_7.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_7.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_8.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_8.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\art\\art_9.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\art\\art_9.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-1.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-1.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-2.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-2.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-3.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-3.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-4.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-4.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-5.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-5.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-6.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-6.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-7.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-7.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\category-8.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\category-8.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collect.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collect.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_1.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_1.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_2.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_2.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_3.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_3.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_4.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_4.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_5.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_5.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_6.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_6.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_7.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_7.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\art_8.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\art_8.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\collectibles\\profile1.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\collectibles\\profile1.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_6.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_6.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_7.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_7.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_8.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_8.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domain\\art_9.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domain\\art_9.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\domains.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\domains.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\forest.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\forest.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_3.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_3.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_4.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_4.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_6.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_6.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_7.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_7.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_8.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_8.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\game\\art_9.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\game\\art_9.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\games.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\games.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_6.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_6.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_7.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_7.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_8.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_8.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\music\\art_9.gif",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\music\\art_9.gif"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\nature.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\nature.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\preservation.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\preservation.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\real-estate.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\real-estate.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\sports.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\sports.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_6.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_6.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_7.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_7.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_8.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_8.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\template\\art_9.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\template\\art_9.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_6.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_6.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_7.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_7.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_8.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_8.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\category\\video\\art_9.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\category\\video\\art_9.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\1200px-Sustainable_Development_Goal_6.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\1200px-Sustainable_Development_Goal_6.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\E_SDG goals_icons-individual-rgb-15.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\E_SDG goals_icons-individual-rgb-15.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\Picture 036.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\Picture 036.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\Sarapiqui.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\Sarapiqui.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\Unknown.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\Unknown.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\climate.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\climate.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\images.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\images.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\land.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\land.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\water.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\water.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\costarica\\world.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\costarica\\world.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\currency\\currency_ETH.svg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\currency\\currency_ETH.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\discover.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\discover.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\download.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\download.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\earn-listing-img.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\earn-listing-img.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\earth.svg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\earth.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\eth-coin.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\eth-coin.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\favicon - Copy.ico",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\favicon - Copy.ico"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\fill-star.svg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\fill-star.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\green-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\green-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\green-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\green-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\home-animation-image1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\home-animation-image1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\home\\space.svg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\home\\space.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\image.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\image.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\item2.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\item2.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\light-pink-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\light-pink-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\light-pink-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\light-pink-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\list-and-sell\\screen-top.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\list-and-sell\\screen-top.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\list-and-sell\\screen.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\list-and-sell\\screen.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\list-and-sell\\token.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\list-and-sell\\token.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\login-background.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\login-background.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\logo - Copy.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\logo - Copy.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\logo-white - Copy.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\logo-white - Copy.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\logo-white.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\logo-white.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\logo.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\map.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\map.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\marketplace-governed\\item1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\marketplace-governed\\item1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\marketplace-governed\\item2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\marketplace-governed\\item2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\marketplace-governed\\item3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\marketplace-governed\\item3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\marketplace-governed\\item4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\marketplace-governed\\item4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\marketplace-governed\\item5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\marketplace-governed\\item5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\marketplace-governed\\main-banner.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\marketplace-governed\\main-banner.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\marketplace-mockup.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\marketplace-mockup.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\meta-banner.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\meta-banner.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\mintale1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\mintale1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\mintale2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\mintale2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\mintale3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\mintale3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\nft\\nft_governance.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\nft\\nft_governance.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\nft\\no_bad.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\nft\\no_bad.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\nft\\super_nft.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\nft\\super_nft.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\nft\\yield_farming.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\nft\\yield_farming.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\nft\\you_control.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\nft\\you_control.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\no-earnings.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\no-earnings.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\no-history.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\no-history.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\no-orders.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\no-orders.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\orrange-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\orrange-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\orrange-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\orrange-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\picton-blue-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\picton-blue-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\picton-blue-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\picton-blue-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\platform-artist\\artist.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\platform-artist\\artist.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\platform-artist\\round.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\platform-artist\\round.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\platform-artist\\screen1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\platform-artist\\screen1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\platform-artist\\screen2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\platform-artist\\screen2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\platform-artist\\screen3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\platform-artist\\screen3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\platform-artist\\screen4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\platform-artist\\screen4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\preloader.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\preloader.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\ratting.svg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\ratting.svg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\red-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\red-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\red-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\red-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\right-arrow.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\right-arrow.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\rose-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\rose-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\rose-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\rose-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling1.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling1.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling2.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling2.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling3.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling3.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling4.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling4.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling5.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling5.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling6.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling6.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling7.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling7.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling8.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling8.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\selling9.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\selling9.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\shop.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\shop.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slide-image - Copy.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slide-image - Copy.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slide-image.jpeg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slide-image.jpeg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slide-image.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slide-image.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider-bg.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider-bg.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\computer.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\computer.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\giraffes.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\giraffes.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\screen.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\screen.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\screen1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\screen1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\screen2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\screen2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\screen3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\screen3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\screen4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\screen4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\screen5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\screen5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\selling2.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\selling2.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\selling8.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\selling8.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\selling9.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\selling9.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\slider\\waterfall.jpg",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\slider\\waterfall.jpg"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user2.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user2.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user3.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user3.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user4.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user4.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user5.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user5.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user6.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user6.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user7.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user7.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\user8.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\user8.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\violet-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\violet-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\violet-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\violet-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\violets-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\violets-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\violets-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\violets-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\vote-img.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\vote-img.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\walls-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\walls-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\walls-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\walls-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\whiskey-logo.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\whiskey-logo.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\whiskey-preloader.html",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\whiskey-preloader.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\wk1.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\wk1.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\world_map.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\world_map.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\public\\images\\writing.png",
+      "PackagePath": "staticwebassets\\nft\\public\\images\\writing.png"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\register.html",
+      "PackagePath": "staticwebassets\\nft\\register.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\review-seller.html",
+      "PackagePath": "staticwebassets\\nft\\review-seller.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\reviews.html",
+      "PackagePath": "staticwebassets\\nft\\reviews.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\search.html",
+      "PackagePath": "staticwebassets\\nft\\search.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\settings.html",
+      "PackagePath": "staticwebassets\\nft\\settings.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\sold-item-list.html",
+      "PackagePath": "staticwebassets\\nft\\sold-item-list.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\templates.html",
+      "PackagePath": "staticwebassets\\nft\\templates.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\terms-of-use.html",
+      "PackagePath": "staticwebassets\\nft\\terms-of-use.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\videos.html",
+      "PackagePath": "staticwebassets\\nft\\videos.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\view-detail.html",
+      "PackagePath": "staticwebassets\\nft\\view-detail.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\vote.html",
+      "PackagePath": "staticwebassets\\nft\\vote.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\nft\\won-auctions.html",
+      "PackagePath": "staticwebassets\\nft\\won-auctions.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\auction-template.html",
+      "PackagePath": "staticwebassets\\src\\auction-template.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\auctions.html",
+      "PackagePath": "staticwebassets\\src\\auctions.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\create-auction-modal.html",
+      "PackagePath": "staticwebassets\\src\\create-auction-modal.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\src\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\src\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\css\\custom-styles.css",
+      "PackagePath": "staticwebassets\\src\\css\\custom-styles.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\css\\overlay-no-web3.css",
+      "PackagePath": "staticwebassets\\src\\css\\overlay-no-web3.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\demo\\index.html",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\demo\\index.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\demo\\style.css",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\demo\\style.css"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\ethers.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\ethers.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\ethers.min.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\ethers.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\ethers.min.js.map",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\ethers.min.js.map"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\ethers.types.txt",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\ethers.types.txt"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\shims.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\shims.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\wordlist-es.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\wordlist-es.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\wordlist-fr.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\wordlist-fr.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\wordlist-it.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\wordlist-it.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\wordlist-ja.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\wordlist-ja.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\wordlist-ko.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\wordlist-ko.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\ethers4dist\\wordlist-zh.js",
+      "PackagePath": "staticwebassets\\src\\ethers4dist\\wordlist-zh.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\file.html",
+      "PackagePath": "staticwebassets\\src\\file.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\index.html",
+      "PackagePath": "staticwebassets\\src\\index.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\inventory.html",
+      "PackagePath": "staticwebassets\\src\\inventory.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\app.js",
+      "PackagePath": "staticwebassets\\src\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\assets\\Chart.min.js",
+      "PackagePath": "staticwebassets\\src\\js\\assets\\Chart.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\assets\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\src\\js\\assets\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\assets\\chartjs-plugin-annotation.min.js",
+      "PackagePath": "staticwebassets\\src\\js\\assets\\chartjs-plugin-annotation.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\assets\\fitty.min.js",
+      "PackagePath": "staticwebassets\\src\\js\\assets\\fitty.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\assets\\moment.js",
+      "PackagePath": "staticwebassets\\src\\js\\assets\\moment.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\assets\\truffle-contract.js",
+      "PackagePath": "staticwebassets\\src\\js\\assets\\truffle-contract.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\assets\\web3.min.js",
+      "PackagePath": "staticwebassets\\src\\js\\assets\\web3.min.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\auctions.js",
+      "PackagePath": "staticwebassets\\src\\js\\auctions.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\create-auction-modal.js",
+      "PackagePath": "staticwebassets\\src\\js\\create-auction-modal.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\init-web3.js",
+      "PackagePath": "staticwebassets\\src\\js\\init-web3.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\inventory.js",
+      "PackagePath": "staticwebassets\\src\\js\\inventory.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\navbar-header.js",
+      "PackagePath": "staticwebassets\\src\\js\\navbar-header.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\js\\view-auction-modal.js",
+      "PackagePath": "staticwebassets\\src\\js\\view-auction-modal.js"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\navbar-header.html",
+      "PackagePath": "staticwebassets\\src\\navbar-header.html"
+    },
+    {
+      "Id": "C:\\Dev\\GenerativeNFT\\wwwroot\\src\\view-auction-modal.html",
+      "PackagePath": "staticwebassets\\src\\view-auction-modal.html"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.GenerativeNFT.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.GenerativeNFT.props",
+      "PackagePath": "build\\GenerativeNFT.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.GenerativeNFT.props",
+      "PackagePath": "buildMultiTargeting\\GenerativeNFT.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.GenerativeNFT.props",
+      "PackagePath": "buildTransitive\\GenerativeNFT.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

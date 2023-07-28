@@ -1,0 +1,156 @@
+﻿@*<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>Generate NFT Images</h1>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<div class="user-store-area">
+ 
+    <div class="row">
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2">
+            @*<div class="default-switch">
+                <span class="switch-label">Advanced</span>
+                <label class="switch">
+                    <input type="checkbox" id="btn-check" checked="">
+                    <span class="slider round"></span>
+                </label>
+                <span class="switch-label" style="margin-right: 0px;">Easy</span>
+            </div>*@
+            <div class="mint-item-main-box">
+                @using (Html.BeginForm("GenerativeImages", "GenerativeArt", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    
+                    <div class="easy-box">
+                        <div class="mint-item-form">
+                            <h1>Metadata</h1>
+                            <div class="theme-container">
+                                <label>Description <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the listing on Mintable - can be the same as the name"></i></label>
+                                <input class="theme-input" type="text" id="metadataDescription" name="metadataDescription" value="Made by NFT.net" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>Image Base URI <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="metadataImageBaseUri" name="metadataImageBaseUri" value="https://someurl.com/nft" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>External URL <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="metadataExternalUrl" name="metadataExternalUrl">
+                            </div>
+
+                            <h1>Collection</h1>
+                            <div class="theme-container">
+                                <label>Size <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the listing on Mintable - can be the same as the name"></i></label>
+                                <input class="theme-input" type="text" id="collectionSize" name="collectionSize" value="3" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>Initial Number <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="collectionInitialNumber" name="collectionInitialNumber" value="1" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>Image Prefix <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="collectionImagePrefix" name="collectionImagePrefix" value="nft #">
+                            </div>
+
+                            <div class="fixed-price-tab-box">
+                               
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="fixed1">
+                                        <div class="theme-box-center">
+                                           
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-fix-btn">
+                                                        <div id="progress"></div>
+                                                        <button email="@User.Identity.Name" id="btn-mintC" type="submit" class="theme-btn">Generate Images</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+<script>
+      //const ipfs = window.IpfsHttpClient("ipfs.infura.io", "5001", {
+      //  protocol: "https",
+      //});
+      //var encode = function (s) {
+      //  var out = [];
+      //  for (var i = 0; i < s.length; i++) {
+      //    out[i] = s.charCodeAt(i);
+      //  }
+      //  return new Uint8Array(out);
+      //};
+      //function getIpfsHashAsync(input, obj = null) {
+      //  return new Promise((resolve, reject) => {
+      //    let reader = new FileReader();
+
+      //    reader.onload = () => {
+      //      const magic_array_buffer_converted_to_buffer = buffer.Buffer(
+      //        reader.result
+      //      ); // honestly as a web developer I do not fully appreciate the difference between buffer and arrayBuffer
+
+      //      resolve(ipfs.add(magic_array_buffer_converted_to_buffer));
+      //    };
+
+      //    reader.onerror = reject;
+
+      //    if (input == "") {
+      //      var str = JSON.stringify(obj);
+      //      var data = encode(str);
+
+      //      var blob = new Blob([data], {
+      //        type: "application/octet-stream",
+      //      });
+
+      //      reader.readAsArrayBuffer(blob);
+      //    } else {
+      //      reader.readAsArrayBuffer(document.getElementById(input).files[0]);
+      //    }
+      //  });
+    //}
+    file1.onchange = evt => {
+        const [file] = file1.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+    }
+
+    $(function () {
+        
+        var $form = $("form:last");
+        $form.validate({
+            rules: {
+                file1: {
+                    required: true,
+                    //accept: "image/*"
+                }
+            },
+            messages: {
+                file1: {
+                    //accept: "Please select Image File Only"
+                }
+            }
+        });
+        // load navbar and modal
+        //$("#app > .navbar").load("navbar-header.html");
+        // initialize smart contracts
+        //App.initContracts();
+      });
+</script>

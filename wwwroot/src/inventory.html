@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Buy your favorite number</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom-styles.css" rel="stylesheet">
+    <link href="css/overlay-no-web3.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/assets/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.4.0/web3.min.js"></script>
+
+    <script src="js/assets/fitty.min.js"></script>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+    <script src="js/init-web3.js"></script>
+  
+    <script src="js/navbar-header.js"></script>
+    <script src="js/inventory.js"></script>
+
+    <script>
+    $(function(){
+      // load navbar and modal
+      $("#inventory > .navbar").load("navbar-header.html");
+      //$("#includedContent > .content-auction-template").load("auction-template.html");
+      $("#includedContent > .content-modal").load("create-auction-modal.html");
+      // initialize smart contracts
+      //App.initContracts();
+      //Inventory.init()
+
+    // get account and load tokens
+   
+      fnc();
+    
+    
+    
+  
+    });
+
+
+    async function fnc(){
+      var account= await signer.getAddress();
+     
+      var balance=await contractNFT.balanceOf(account);//.then((instance) => {
+      balance=balance.toNumber();
+      console.log(balance)
+      if(balance==0){
+        return;
+      }
+      let i = 0;
+
+      let getOwnedNFT = async (i) => {
+        console.log(`calling getOwnedNFT() with i = ${i}`)
+        var number=await contractNFT.tokenOfOwnerByIndex(account, i);//.then((instance) => {
+          number=number.toNumber();
+         var url=await contractNFT.tokenURI(number);
+          
+         console.log(`found url ${url}`)
+          
+
+          // add thousands seperators
+          //let formattedNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+          // append number to dom
+          const accNumberRow = $('#accNumberRow')
+          const accNumberTemplate = $('#accNumberTemplate')
+          $.ajaxSetup({async: false});
+            $.get(url, function (data) {
+                  //console.log(data.image+ ' ght')
+              accNumberTemplate.find('.panel-body .number').html('<img src="'+data.image+'" height="200px" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="'+data.file+'" target="_blank">Digital Content Link</a>')
+          
+            
+          //accNumberTemplate.find('.panel-body .number').text(formattedNumber)
+          console.log('bbgg'+number)
+          //accNumberTemplate.find('.panel-number .number').attr('data-token-id', number)
+          ////accNumberTemplate.find('.panel-number button').attr('data-token-id', number)
+
+              accNumberTemplate.find('.btnsellAuction').hide().attr('data-token-id', number);
+              accNumberTemplate.find('.btndelAuction').hide().attr('data-token-id', number);
+              accNumberTemplate.find('.btnSellToBidder').hide().attr('data-token-id', number);
+              accNumberTemplate.find('.btnTransfer').hide().attr('data-token-id', number);
+              accNumberTemplate.find('.btnDelete').hide().attr('data-token-id', number);
+              accNumberRow.append(accNumberTemplate.html());
+            });
+            $.ajaxSetup({async: true});
+            
+              var o=await contractAuction.isTokenExist(number);//.then((instance) => {
+           
+            if(o){
+             
+              var obj=await contractAuction.getAuctionByTokenId(number);//.then((instance) => {
+              console.log(obj);
+               var auctionId=obj[0].toString();console.log(auctionId);
+                var cnt=await contractAuction.getBidsCount(auctionId);//.then((instance) => {
+                console.log(cnt.toString()+' cnt')
+                  console.log(parseInt(cnt.toString())>0);
+                  var currentPrice=await contractAuction.getCurrentPriceByAuctionId(auctionId);//.then((instance) => {
+                   
+                    currentPrice=currentPrice.toString(); console.log(currentPrice)//220000000000000000
+                currentPrice = ethers.utils.formatEther(currentPrice);console.log(currentPrice)//0.22
+                    var txt='';
+                    if (currentPrice == 0) {
+                      txt='(Auction Ended)';
+                    }
+                    if(parseInt(cnt.toString())>0){
+                       
+                        accNumberRow.find('.btnSellToBidder[data-token-id="' + number + '"]').show().text('Sell to Bidder' + txt).attr('data-auction-id', auctionId);
+                    } else {
+                        
+                        accNumberRow.find('.btndelAuction[data-token-id="' + number + '"]').show().text('Delete On Auction' + txt).attr('data-auction-id', auctionId);
+                    }
+                    
+                 
+              
+            }else{
+                accNumberRow.find('.btnsellAuction[data-token-id="' + number + '"]').show();
+                accNumberRow.find('.btnTransfer[data-token-id="' + number + '"]').show();
+                accNumberRow.find('.btnDelete[data-token-id="' + number + '"]').show();
+                
+              }
+            
+              
+            
+          
+          i++
+          if (i < balance) {
+            getOwnedNFT(i)
+          }
+        }
+      getOwnedNFT(i)
+    }
+    </script>
+  </head>
+
+  <body>
+    <div id="inventory">
+      <nav class="navbar navbar-default">
+      </nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <h1 class="text-center">Your Collectibles</h1>
+            <h1 class="text-center" id="demo"></h1>
+            <hr/>
+            <br/>
+          </div>
+        </div>
+        <div class="row hide" id="transferForm">
+          <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <form id="" class="form-inline">
+              <div class="input-group">
+                <input type="hidden" value="" id="tokenId"/>
+                <input type="text" required="" class="form-control" id="addr" placeholder="wallet address...(0x....)" value="">
+              </div>
+             
+              <button id="btn-transfer" type="button" class="btn btn-success">Transfer Ownership</button>
+              <button id="btn-cancel" type="button" class="btn btn-warning">Cancel</button>
+              <hr/>
+            </form>
+          </div>
+        </div>
+
+        <div id="accNumberRow" class="row">
+          <!-- numbers load here -->
+        </div>
+
+      
+
+      <div id="accNumberTemplate" style="display:none;">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="panel panel-default panel-number">
+            <div class="panel-body">
+              <div>
+                <div class="number"></div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-success init-sell btnsellAuction"
+                        type="button" data-toggle="modal"
+                        data-target="#createAuctionModal">
+                        Sell On Auction
+                </button>
+                <button class="btn btn-danger btndelAuction"
+                        type="button">
+                        Delete On Auction
+                </button>
+                <button class="btn btn-warning btnSellToBidder"
+                data-auction-id=""
+                        type="button">
+                        Sell to Bidder
+                </button>
+                <button class="btn btn-info btnTransfer"
+                        type="button">
+                        Transfer
+                </button>
+                <button class="btn btn-danger btnDelete"
+                        type="button">
+                        Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="includedContent">
+        <div class="content-auction-template"></div>
+        <div class="content-modal"></div>
+      </div>
+
+    </div>
+  </body>
+</html>

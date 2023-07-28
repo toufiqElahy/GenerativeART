@@ -1,0 +1,459 @@
+﻿<section class="gasless-area page-paddings">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="section-title text-center">
+                    <h2 data-watermark="Sale">Create and List an item for sale</h2>
+                    <p class="subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard?</p>
+                </div>
+            </div>
+        </div>
+        
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2">
+                    <div class="default-switch">
+                        <span class="switch-label">Advanced</span>
+                        <label class="switch">
+                            <input type="checkbox" id="btn-check" checked="">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="switch-label" style="margin-right: 0px;">Easy</span>
+                    </div>
+                    <div class="mint-item-main-box">
+                        @using (Html.BeginForm("CreateNft", "Auction", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                        <div class="easy-box">
+                            <div class="mint-item-form">
+                                <div class="theme-input-box">
+                                    <label>What kind of item are you making?</label>
+                                    <select name="category" id="category" class="form-control" required>
+
+                                        <option value="art">Art</option>
+                                        <option value="collectibles">Collectibles</option>
+                                        <option value="game items">Game Items</option>
+                                        <option value="music">Music</option>
+                                        <option value="domains">Domains</option>
+                                        <option value="templates">Templates</option>
+                                        <option value="videos">Videos</option>
+                                    </select>
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Listing Name <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the listing on Mintable - can be the same as the name"></i></label>
+                                    <input class="theme-input" type="text" id="name" name="name" required>
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Listing Description <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                    <input class="theme-input" type="text" id="description" name="description" required>
+                                </div>
+
+                                <div class="theme-input-box">
+                                    <label style="margin: 0px;">Upload item preview images. <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="These are the images people will see when browsing your NFT. The first image uploaded is the image on the token"></i></label>
+                                    <p class="theme-description">The first preview image you upload will be displayed on <b>all wallets as the token image!</b> (.GLB files will be displayed in an interactive 3D viewer)</p>
+                                    <div class="upload-images-box clearfix">
+                                        <div class="upload-images-item">
+                                            <i class="fas fa-plus"></i>
+                                            <p class="theme-description">Add Images</p>
+                                            <input type="file" class="form-control-file" id="file1" name="file1" required />
+                                            <img src="public/images/addfiles.svg" id="blah">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Upload a private/unlockable item file. <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="This is a private file that only the owner of your NFT can download. Max size 2gb, any file type accepted"></i></label>
+                                    <div class="theme-file-upload text-center">
+                                        <div class="file-upload-ico">
+                                            <img src="public/images/addfiles.svg" alt="">
+                                        </div>
+                                        <h3 class="theme-title">Click to add your private file</h3>
+                                        <p class="theme-description">(items may be audio, video, image, files, ZIP, documents and many more)</p>
+                                    </div>
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Listing subtitle</label>
+                                    <textarea class="theme-input" id="editor" rows="4"></textarea>
+                                    <div class="Listing-checkbox">
+                                        <input class="styled-checkbox" id="styled-checkbox-0" type="checkbox" value="value2">
+                                        <label for="styled-checkbox-0"><span>Transfer Copyright when purchased? <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="When a buyer purchases this item, they have the rights to use the file commercially."></i></span></label>
+                                    </div>
+                                </div>
+                                @*<div class="theme-form-title text-center">
+                                    <h3 class="theme-title"><span>Fixed price - in USD</span></h3>
+                                </div>*@
+                                <div class="fixed-price-tab-box">
+                                    <div class="nft-filter">
+                                        <ul id="myTabs2" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+                                            <li><a class="" href="#fixed" data-toggle="tab">Fixed</a></li>
+                                            <li><a href="#action" data-toggle="tab" class="active">Auction</a></li>
+                                            <li><a href="#auction-buy-now" data-toggle="tab" class="show">Auction with Buy Now</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade in active" id="fixed1">
+                                            <div class="theme-box-center">
+                                                @*<div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="theme-input-box">
+                                                            <label>Fixed price - in USD</label>
+                                                            <input class="theme-input" type="number" name="price" placeholder="$0.00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="fix-price-value">
+                                                            <h3 class="theme-title" style="color: #f39953;">Price in CPAY: 0.000000</h3>
+                                                            <p class="theme-description">Current CPAY price: 1 CPAY = $1691.64</p>
+                                                        </div>
+                                                    </div>
+                                                </div>*@
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <div class="theme-fix-btn">
+                                                            @*<button class="theme-btn">List this Item</button>*@
+                                                            <div id="progress"></div>
+                                                            <button email="@User.Identity.Name" id="btn-mintC" type="submit" class="theme-btn">Mint NFT</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="action1">
+                                            <div class="theme-box-center">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="theme-input-box">
+                                                            <label>Starting bid price - in USD</label>
+                                                            <input class="theme-input" type="number" name="starting bids" placeholder="$0.00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="fix-price-value">
+                                                            <h3 class="theme-title" style="color: #f39910;">Price in CPAY: 0.000000</h3>
+                                                            <p class="theme-description">Current CPAY price: 1 CPAY = $1702.76</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Auction length</label>
+                                                        <select class="theme-input">
+                                                            <option value="43200">12 hours</option>
+                                                            <option value="86400">24 hours</option>
+                                                            <option value="172800">2 days</option>
+                                                            <option value="259200">3 days</option>
+                                                            <option value="604800">7 days</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-fix-btn">
+                                                        <button class="theme-btn">List this Item</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="auction-buy-now1">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Starting bid price - in USD</label>
+                                                        <input class="theme-input" type="number" name="starting bids price" placeholder="$0.00">
+                                                        <div class="fix-price-value" style="margin-top: 10px;">
+                                                            <h3 class="theme-title" style="color: #f39910;">Price in CPAY: 0.000000</h3>
+                                                            <p class="theme-description">Current CPAY price: 1 CPAY = $1704.15</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Buy now price - in USD</label>
+                                                        <input class="theme-input" type="number" name="buy now price" placeholder="$0.00">
+                                                        <div class="fix-price-value" style="margin-top: 10px;">
+                                                            <h3 class="theme-title" style="color: #f39910;">Price in CPAY: 0.000000</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Auction length</label>
+                                                        <select class="theme-input">
+                                                            <option value="43200">12 hours</option>
+                                                            <option value="86400">24 hours</option>
+                                                            <option value="172800">2 days</option>
+                                                            <option value="259200">3 days</option>
+                                                            <option value="604800">7 days</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-fix-btn">
+                                                        <button class="theme-btn">List this Item</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+
+                        @using (Html.BeginForm("CreateNft", "Auction", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                        <div class="advanced-box" style="display: none;">
+                            <div class="mint-item-form">
+                                <div class="theme-input-box">
+                                    <label>What kind of item are you making?</label>
+                                    <ul class="list-select-item clearfix">
+                                        <li><span class="active">Art</span></li>
+                                        <li><span>Collectibles</span></li>
+                                        <li><span>Game Items</span></li>
+                                        <li><span>Music</span></li>
+                                        <li><span>Domains</span></li>
+                                        <li><span>Templates</span></li>
+                                        <li><span>Videos</span></li>
+                                    </ul>
+                                </div>
+                                <div class="Listing-checkbox">
+                                    <input class="styled-checkbox" id="styled-checkbox-30" type="checkbox" value="value1">
+                                    <label for="styled-checkbox-30"><span>Batch mint multiple tokens <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Create and list many tokens in a single transaction"></i></span></label>
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Token name <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the NFT on the blockchain that will be displayed everywhere"></i></label>
+                                    <input class="theme-input" type="text" name="token name">
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Listing title <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the listing on Mintable - can be the same as the name"></i></label>
+                                    <input class="theme-input" type="text" name="listing title">
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Listing subtitle <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                    <input class="theme-input" type="text" name="listing subtitle">
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Listing tags <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Use a comma, tab, or enter to seperate your tags. Tags help your items become more searchable."></i></label>
+                                    <input class="theme-input" type="text" name="listing tags" placeholder="Add a tag">
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Upload a private/unlockable item file. <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is a private file that only the owner of your NFT can download. Max size 2gb, any file type accepted"></i></label>
+                                    <div class="theme-file-upload text-center">
+                                        <div class="file-upload-ico">
+                                            <img src="public/images/addfiles.svg" alt="">
+                                        </div>
+                                        <h3 class="theme-title">Click to add your private file</h3>
+                                        <p class="theme-description">(items may be audio, video, image, files, ZIP, documents and many more)</p>
+                                    </div>
+                                </div>
+                                <div class="theme-input-box">
+                                    <label style="margin: 0px;">Upload item preview images. <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="These are the images people will see when browsing your NFT. The first image uploaded is the image on the token"></i></label>
+                                    <p class="theme-description">The first preview image you upload will be displayed on <b>all wallets as the token image!</b> (.GLB files will be displayed in an interactive 3D viewer)</p>
+                                    <div class="upload-images-box clearfix">
+                                        <div class="upload-images-item">
+                                            <i class="fas fa-plus"></i>
+                                            <p class="theme-description">Add Images</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img id="blah" src="#" alt="Preview image" class="thumbnail" width="" height="200" />
+                                </div>
+                                <div class="theme-form-title text-center">
+                                    <h3 class="theme-title"><span>Other Metadata</span></h3>
+                                </div>
+                                <div class="theme-input-box">
+                                    <p class="theme-description">Add extra data on your token (maximum of 20 data allowed)</p>
+                                    <label>Name of your data</label>
+                                    <input class="theme-input" type="text" name="data" placeholder="Enter a name for data">
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Value of your data</label>
+                                    <input class="theme-input" type="text" name="value" placeholder="Value of your data">
+                                    <div class="data-value-btn">
+                                        <button class=""><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="theme-input-box">
+                                    <label>Listing subtitle</label>
+                                    <textarea class="theme-input" id="advance-editor" rows="4"></textarea>
+                                    <div class="Listing-checkbox">
+                                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+                                        <label for="styled-checkbox-1"><span>Transfer Copyright when purchased? <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="When a buyer purchases this item, they have the rights to use the file commercially."></i></span></label>
+                                    </div>
+                                </div>
+                                <div class="theme-input-box">
+                                    <div class="Listing-checkbox">
+                                        <input class="styled-checkbox" id="styled-checkbox-20" type="checkbox" value="value1" checked="">
+                                        <label for="styled-checkbox-20"><span>Allow buyer to resell? <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="A buyer can resell this item for a different price after purchasing it."></i></span></label>
+                                    </div>
+                                </div>
+                                <div class="theme-form-title text-center">
+                                    <h3 class="theme-title"><span>Fixed price - in USD</span></h3>
+                                </div>
+                                <div class="fixed-price-tab-box">
+                                    <div class="nft-filter">
+                                        <ul id="myTabs1" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+                                            <li><a class="active" href="#fixed" data-toggle="tab">Fixed</a></li>
+                                            <li><a href="#action" data-toggle="tab">Auction</a></li>
+                                            <li><a href="#auction-buy-now" data-toggle="tab">Auction with Buy Now</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade in" id="fixed2">
+                                            <div class="theme-box-center">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="theme-input-box">
+                                                            <label>Fixed price - in USD</label>
+                                                            <input class="theme-input" type="number" name="fix price" placeholder="$0.00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="fix-price-value">
+                                                            <h3 class="theme-title" style="color: #f39910;">Price in CPAY: 0.000000</h3>
+                                                            <p class="theme-description">Current CPAY price: 1 CPAY = $1691.64</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <div class="theme-fix-btn">
+                                                            <button class="theme-btn">List this Item</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="action">
+                                            <div class="theme-box-center">
+                                                <div class="row">
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="theme-input-box">
+                                                            <label>Starting bid price - in USD</label>
+                                                            <input class="theme-input" type="number" name="starting bid" placeholder="$0.00">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                        <div class="fix-price-value">
+                                                            <h3 class="theme-title" style="color: #f39910;">Price in CPAY: 0.000000</h3>
+                                                            <p class="theme-description">Current CPAY price: 1 CPAY = $1702.76</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Auction length</label>
+                                                        <select class="theme-input">
+                                                            <option value="43200">12 hours</option>
+                                                            <option value="86400">24 hours</option>
+                                                            <option value="172800">2 days</option>
+                                                            <option value="259200">3 days</option>
+                                                            <option value="604800">7 days</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-fix-btn">
+                                                        <button class="theme-btn">List this Item</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade active show" id="auction-buy-now">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Starting bid price - in USD</label>
+                                                        <input class="theme-input" type="number" name="starting bid" placeholder="$0.00">
+                                                        <div class="fix-price-value" style="margin-top: 10px;">
+                                                            <h3 class="theme-title" style="color: #f39910;">Price in CPAY: 0.000000</h3>
+                                                            <p class="theme-description">Current CPAY price: 1 CPAY = $1704.15</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Buy now price - in USD</label>
+                                                        <input class="theme-input" type="number" name="buy now" placeholder="$0.00">
+                                                        <div class="fix-price-value" style="margin-top: 10px;">
+                                                            <h3 class="theme-title" style="color: #f39910;">Price in CPAY: 0.000000</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-input-box">
+                                                        <label>Auction length</label>
+                                                        <select class="theme-input">
+                                                            <option value="43200">12 hours</option>
+                                                            <option value="86400">24 hours</option>
+                                                            <option value="172800">2 days</option>
+                                                            <option value="259200">3 days</option>
+                                                            <option value="604800">7 days</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-fix-btn">
+                                                        <button class="theme-btn">List this Item</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+</section>
+
+
+
+
+
+
+
+<script>
+    file1.onchange = evt => {
+        const [file] = file1.files
+        if (file) {
+            blah.src = URL.createObjectURL(file)
+        }
+    }
+
+    $(function () {
+
+        var $form = $("form:last");
+        $form.validate({
+            rules: {
+                file1: {
+                    required: true,
+                    //accept: "image/*"
+                }
+            },
+            messages: {
+                file1: {
+                    //accept: "Please select Image File Only"
+                }
+            }
+        });
+      
+    });
+</script>

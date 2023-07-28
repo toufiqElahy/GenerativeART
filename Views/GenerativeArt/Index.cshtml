@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mint-item-main-box">
+                @using (Html.BeginForm("Index", "GenerativeArt", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    
+                    <div class="easy-box">
+                        <div class="mint-item-form">
+                            <h1>Metadata</h1>
+                            <div class="theme-container">
+                                <label>Description <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the listing on Mintable - can be the same as the name"></i></label>
+                                <input class="theme-input" type="text" id="metadataDescription" name="metadataDescription" value="Made by NFT.net" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>Image Base URI <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="metadataImageBaseUri" name="metadataImageBaseUri" value="https://someurl.com/nft" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>External URL <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="metadataExternalUrl" name="metadataExternalUrl">
+                            </div>
+
+                            <h1>Collection</h1>
+                            <div class="theme-container">
+                                <label>Size <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the listing on Mintable - can be the same as the name"></i></label>
+                                <input class="theme-input" type="text" id="collectionSize" name="collectionSize" value="3" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>Initial Number <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="collectionInitialNumber" name="collectionInitialNumber" value="1" required>
+                            </div>
+                            <div class="theme-container">
+                                <label>Image Prefix <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                <input class="theme-input" type="text" id="collectionImagePrefix" name="collectionImagePrefix" value="nft #">
+                            </div>
+
+                            <div class="fixed-price-tab-box">
+                               
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="fixed1">
+                                        <div class="theme-box-center">
+                                           
+                                            <div class="row">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="theme-fix-btn">
+                                                        <div id="progress"></div>
+                                                        <button id="btn-mintC" type="submit" class="btn">Generate Images</button>
+                                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }

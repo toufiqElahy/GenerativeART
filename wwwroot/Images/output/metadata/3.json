@@ -1,0 +1,22 @@
+{
+  "id": 3,
+  "dna": "2-0-0",
+  "image": "https://someurl.com/nft/3.png",
+  "name": "nft #3",
+  "filename": "3.png",
+  "description": "Made by NFT.net",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Shape",
+      "value": "Circle"
+    },
+    {
+      "trait_type": "Letter",
+      "value": "A"
+    }
+  ]
+}

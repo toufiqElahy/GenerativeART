@@ -1,0 +1,122 @@
+﻿<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>Current Item List</h1>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="user-store-area">
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 hide" id="template">
+            <div class="item-group current-item-box">
+                <div class="item-view-box">
+                    <span><i class="fas fa-eye"></i> 2</span>
+                </div>
+                <div class="item-group-content">
+                    <div class="item-group-avtar">
+                        <img src="public/images/category/art/art_4.png" alt="">
+                    </div>
+                    <h3 class="user-theme-title">Mirage Illustration Of White And Red Strips</h3>
+                    <p class="theme-description">This mirage illustration of white and red strips will blow your mind and with its dilusional characterstics it will look.</p>
+                    <ul>
+                        <li><span>Store</span> <text class="author"></text> store</li>
+                        <li><span>Bids</span> 1</li>
+                    </ul>
+                    <h2 class="item-price">$154.17</h2>
+                    @*<div class="item-group-btn">
+                        <a class="theme-btn transparent-btn" href="7mcq4lo-csmj.html">Edit</a>
+                        <a class="theme-btn transparent-btn" href="javascript:void(0);" data-toggle="modal" data-target="#listing-cancel">Cancel</a>
+                    </div>
+                    <div class="item-group-btn">
+                        <a style="width: 100%;padding: 14px 15px;" class="theme-btn" href="view-detail.html">No Reactions</a>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    char c = '@';
+}
+<script>
+    var ethUsdPrice = 0;
+    $.ajaxSetup({ async: false });
+    $.get('https://min-api.cryptocompare.com/data/price?fsym=eth&tsyms=usd', function (data) {
+        console.log(data)
+        ethUsdPrice = data.USD;
+        $.ajaxSetup({ async: true });
+    });
+
+      $(function () {
+
+          fnc();
+      });
+    var owner='@(User.Identity.IsAuthenticated? User.Identity.Name.Split(c)[0]:"")'
+    async function fnc() {
+
+        //var iface = new ethers.utils.Interface(abiAuction);
+        //event AuctionStatus(string indexed evntName,string indexed category,address msgSender, uint256 indexed auctionId,uint256 price,address coinpayUser);
+        var coinpayUser = '@ViewBag.address';
+        var account = '';//await signer.getAddress();
+        coinpayUser = coinpayUser == '' ? account : coinpayUser; 
+        var filter = contractNFT.filters.AuctionStatus("AuctionCreated", null, null, null, null, coinpayUser);
+        var filter2 = contractNFT.filters.AuctionStatus("AuctionReCreated", null, null, null, null, coinpayUser);
+
+        var events = await contractNFT.queryFilter(filter);
+        var events2 = await contractNFT.queryFilter(filter2);
+        var filterevents=[], filterevents2=[];
+        events.map(async function (evnt) {
+            filterevents.push(evnt.args.auctionId.toString());
+        }); 
+        events2.map(async function (evnt) {
+            var id = evnt.args.auctionId.toString();
+            if (!(filterevents2.indexOf(id) !== -1)) {
+                //alert("Value exists!")
+                filterevents2.push(id);
+            }
+
+        });
+
+        var union = [...new Set([...filterevents, ...filterevents2])]; 
+        $('#Loading').html('');
+        var $template = $("#template");
+     
+        union.map(async function (auctionId) {
+            var auction = await contractNFT.getAuctionByAuctionId(auctionId); console.log(auction)
+            var price = ethers.utils.formatEther(auction.startingPrice.toString());
+
+            if (auction.isActive == true && auction.coinpayUser == coinpayUser) {
+                //$('#ethAmnt').text(parseFloat(price) + parseFloat($('#ethAmnt').text()));
+                //$('#usdAmnt').text(parseFloat(price) * parseFloat(ethUsdPrice));
+                var url = await contractNFT.tokenURI(auctionId); console.log(url);
+                url = customIpfsPath(url); console.log(url);
+
+                $.ajaxSetup({ async: false });
+                $.get(url, function (data) {
+                    console.log(url);
+                    $template.find("img:first").attr('src', customIpfsPath(data.image));
+                    $template.find(".owner:first").text(owner);
+                    $template.find(".user-theme-title:first").text(data.name);
+                    $template.find(".theme-description:first").text(data.description);
+                    $template.find(".author:first").text(data.author);//data.author
+                    $template.find(".tokenid:first").text(auctionId);
+                    //$template.find(".soldTo:first").text(log.args.msgSender);
+                    $template.find(".item-price:first").text('$' + (parseFloat(price) * parseFloat(ethUsdPrice)).toFixed(2) + '(' + price + 'CPAY)');
+
+                    $template.parent().append('<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">' + $template.html() + '</div>');
+                });
+                $.ajaxSetup({ async: true });
+            }
+            
+
+
+        });
+
+
+    }
+
+</script>

@@ -1,0 +1,183 @@
+﻿<div class="user-panel-breadcrumb">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <div class="user-panel-breadcrumb-left">
+                <h1>My Orders [Injected Wallet]</h1>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="user-store-area">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 hide" id="template">
+            <div class="view-store-item">
+                <span class="store-label alert alert-success status">Completed</span>
+                <div class="view-store-box">
+                    <div class="view-store-images">
+                        <a href="#"><img src="~/nft/public/images/category/art/art_1.png" alt=""></a>
+                    </div>
+                    <div class="view-store-info">
+                        <h3 class="user-theme-title">Amazing Oil Painting Of Man In Grey Hat</h3>
+                        <p class="theme-description">Lets make your own coin, Coin P</p>
+                        <ul>
+                            <li>Token ID : <span class="tokenId">492</span></li>
+                            <li>Seller : <span class="author">marqueritelynch</span></li>
+                        </ul>
+                        <div class="item-group-box clearfix">
+                            <div class="item-group-bid">
+                                <p class="theme-description">Purchased for:</p>
+                                <h2><text id="bold"></text> CPAY</h2>
+                            </div>
+                            <div class="item-group-bid">
+                                <a href="" target="_blank" class="theme-btn dwnload">Download</a>
+                            </div>
+                            @*<div class="item-group-bid">
+                                <a class="theme-btn transparent-btn" href="review-seller.html">Review this seller <i class="fas fa-arrow-right"></i></a>
+                            </div>*@
+                        </div>
+                        <ul>
+                            <li>Store : <span class="store">Mintable Gasless store</span></li>
+                            <li>Contract Address : <span class="contract">0x87fDD73dcA8E93e359832C7De3bab2B198bB5555</span></li>
+                            @*<li>File : <span>P_Crypto.jpg</span></li>*@
+                        </ul>
+                    </div>
+                </div>
+                @*<p class="theme-description browse-description">This painting is complete made with oil paint showcasing a man with grey hat, you can see all the fine details cearly and this paithing one of it kind</p>*@
+            </div>
+        </div>
+        @*<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="view-store-item">
+                <span class="store-label alert alert-danger">Canceled</span>
+                <div class="view-store-box">
+                    <div class="view-store-images">
+                        <a href="#"><img src="~/nft/public/images/category/art/art_3.png" alt=""></a>
+                    </div>
+                    <div class="view-store-info">
+                        <h3 class="user-theme-title">The Depicting Buddha Painting</h3>
+                        <p class="theme-description">Lets make your own coin, Coin P</p>
+                        <ul>
+                            <li>Token ID : <span>1117886169507812899157082259732407507512193895...</span></li>
+                            <li>Seller : <span>marqueritelynch</span></li>
+                        </ul>
+                        <div class="item-group-box clearfix">
+                            <div class="item-group-bid">
+                                <p class="theme-description">Purchased for:</p>
+                                <h2>$199.96</h2>
+                            </div>
+                            <div class="item-group-bid">
+                                <button class="theme-btn" disabled="">Download</button>
+                            </div>
+                            <div class="item-group-bid">
+                                <a class="theme-btn transparent-btn" href="review-seller.html">Review this seller <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Store : <span>Mintable Gasless store</span></li>
+                            <li>Contract Address : <span>0x87fDD73dcA8E93e359832C7De3bab2B198bB5555</span></li>
+                            <li>File : <span>P_Crypto.jpg</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="theme-description browse-description">If you believe in buddha then this painting is speacialy made for you, it depicting style will catch you eyes and others too.</p>
+            </div>
+        </div>*@
+    </div>
+</div>
+
+
+<script>
+    var ethUsdPrice = 0;
+    $.ajaxSetup({ async: false });
+    $.get('https://min-api.cryptocompare.com/data/price?fsym=eth&tsyms=usd', function (data) {
+        console.log(data)
+        ethUsdPrice = data.USD;
+        $.ajaxSetup({ async: true });
+    });
+
+      $(function () {
+
+          fnc();
+      });
+    async function fnc() {
+
+        //var iface = new ethers.utils.Interface(abiAuction);
+        //event AuctionStatus(string indexed evntName,string indexed category,address msgSender, uint256 indexed auctionId,uint256 price,address coinpayUser);
+        var coinpayUser = '@ViewBag.address';
+        var account = signer == null? '@ViewBag.address': await signer.getAddress(); console.log(account.toLowerCase());
+        coinpayUser = coinpayUser == '' ? account : coinpayUser;
+        var filter = contractNFT.filters.AuctionStatus("BidOnAuction", account.toLowerCase().substring(2), null, null, null, null);
+
+        var events = await contractNFT.queryFilter(filter); console.log(events)
+        
+        $('#Loading').html('');
+        var $template = $("#template");
+        var auctionIds = [];
+        events.map(async function (log) {
+            var auctionId = log.args.auctionId.toString(); console.log(auctionIds.indexOf(auctionId) !== -1);
+            if (!(auctionIds.indexOf(auctionId) !== -1)) {
+                auctionIds.push(auctionId);
+            } else {
+
+
+                var price = ethers.utils.formatEther(log.args.price.toString());
+                ////////
+                var bids = await contractNFT.getBidsById(auctionId); //console.log(log);
+                var status = "";
+                var owner = await contractNFT.ownerOf(auctionId);//if(owner!=account) lost on auction
+                if (bids.length > 0) {
+                    var lastBid = bids[bids.length - 1];
+                    var lastBidder = lastBid.from;//if(lastBidder!=account) overBidded
+                    if (lastBidder == account) {
+                        status = 'Bidded [Your Bid is the Highest]';
+                    } else {
+
+                        if (owner == account) {
+                            status = 'Bidded on Auction(Sell To Bidder)';
+                        } else {
+                            status = 'Over-Bidded By Someone';
+                        }
+
+                    }
+                } else {
+                    //var owner = await contractNFT.ownerOf(auctionId);//if(owner!=account) lost on auction
+                    if (owner == account) {
+                        status = 'Won on Auction';
+                    } else {
+                        status = 'Lost on Auction';
+                    }
+                }
+                /////////
+
+                //$('#ethAmnt').text(parseFloat(price) + parseFloat($('#ethAmnt').text()));
+                //$('#usdAmnt').text(parseFloat(price) * parseFloat(ethUsdPrice));
+                var url = await contractNFT.tokenURI(auctionId); console.log(url);
+                url = customIpfsPath(url); console.log(url);
+
+                $.ajaxSetup({ async: false });
+                $.get(url, function (data) {
+                    console.log(url);
+                    $template.find(".status:first").text(status);
+                    $template.find("img:first").attr('src', customIpfsPath(data.image));
+                    $template.find(".user-theme-title:first").text(data.name);
+                    $template.find(".theme-description:first").text(data.description);
+                    $template.find(".store:first").text(data.author + ' store');
+                    $template.find(".author:first").text(data.author);
+                    $template.find(".tokenId:first").text(auctionId);
+                    $template.find(".contract:first").text(ContractAddressNFT);
+                    $template.find("#bold").text(price);
+                    $template.find(".dwnload:first").attr('href', customIpfsPath(data.image));
+
+                    $template.parent().append('<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">' + $template.html() + '</div>');
+                });
+                $.ajaxSetup({ async: true });
+
+
+                //$('#ifEmpty').hide();
+            }
+        });
+
+
+    }
+
+</script>

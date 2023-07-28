@@ -1,0 +1,22 @@
+{
+  "id": 9,
+  "dna": "1-1-1",
+  "image": "https://someurl.com/nft/9.png",
+  "name": "nft #9",
+  "filename": "9.png",
+  "description": "Made by NFT.net",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Shape",
+      "value": "Rectangle"
+    },
+    {
+      "trait_type": "Letter",
+      "value": "B"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Buy your favorite content</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custom-styles.css" rel="stylesheet" />
+    <link href="css/overlay-no-web3.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/assets/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.4.0/web3.min.js"></script>
+
+    <script src="js/assets/fitty.min.js"></script>
+    <script src="js/assets/Chart.min.js"></script>
+    <script src="js/assets/chartjs-plugin-annotation.min.js"></script>
+
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+    ></script>
+    <script src="js/init-web3.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/navbar-header.js"></script>
+    <script src="js/auctions.js"></script>
+    <script src="js/view-auction-modal.js"></script>
+  </head>
+
+  <body>
+    <div id="auctions">
+      <nav class="navbar navbar-default"></nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <h1 class="text-center">Current Auctions</h1>
+            <h1 class="text-center" id="demo"></h1>
+            <hr />
+            <br />
+          </div>
+        </div>
+
+        <div id="auctionsRow" class="row">
+          <!-- auctions load here -->
+        </div>
+      </div>
+
+      <div id="includedContent">
+        <div class="content-auction-template"></div>
+        <div class="content-modal"></div>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        // load navbar and modal
+        $("#auctions > .navbar").load("navbar-header.html");
+        $("#includedContent > .content-auction-template").load(
+          "auction-template.html"
+        );
+        $("#includedContent > .content-modal").load("view-auction-modal.html");
+        // initialize smart contracts
+        //App.initContracts();
+        //Auctions.init();
+        Auctions.bindEvents();
+      });
+      fnc();
+      async function fnc() {
+        //var iface = new ethers.utils.Interface(abiAuction);
+        var filter = contractAuction.filters.AuctionCreated();
+        var filter2 = contractAuction.filters.AuctionCancelled();
+        var filter3 = contractAuction.filters.AuctionSuccessful();
+        var deletedAuctionIds = [];
+
+        var events = await contractAuction.queryFilter(filter2);
+        events.map(function (log) {
+          deletedAuctionIds.push(log.args.auctionId.toString());
+          //console.log("filter2 " + log.args.auctionId.toString());
+        });
+        events = await contractAuction.queryFilter(filter3);
+        events.map(function (log) {
+          deletedAuctionIds.push(log.args.auctionId.toString());
+          //console.log("filter3 " + log.args.auctionId.toString());
+        });
+
+        events = await contractAuction.queryFilter(filter);
+        events.map(async function (log) {
+          var auctionId = log.args.auctionId.toString();
+
+          if (deletedAuctionIds.includes(auctionId) == false) {
+            console.log(auctionId);
+            var tokenId = log.args.tokenId.toString();
+            var startingPrice = log.args.startingPrice.toString();
+            var endingPrice = log.args.endingPrice.toString();
+            var duration = log.args.duration.toString();
+
+            var auctionTemplate = $("#auctionTemplate");
+            auctionTemplate
+              .find(".panel-body")
+              .attr("data-auction-id", auctionId);
+
+            auctionTemplate
+              .find(".panel-body .number")
+              .attr("data-token-id", tokenId);
+            auctionTemplate
+              .find(".panel-body .price-start")
+                .text(ethers.utils.formatEther(startingPrice));
+            auctionTemplate.find(".panel-body .duration").text(duration / 60);
+            var rslt = await contractAuction.getCurrentBid(auctionId);
+
+            var bidPrice = rslt[0].toString();
+            if (bidPrice != "0") {
+              console.log(rslt[0].toString());
+              var $tmplt = $("#auctionsRow").find(
+                '[data-auction-id="' + auctionId + '"]'
+              );
+              //$tmplt.html('hello');
+              $tmplt
+                .find(".price-bid")
+                  .text(ethers.utils.formatEther(bidPrice));
+              $tmplt.find(".bidder-bid").text(rslt[1].substring(16, 0));
+            }
+            //$.ajaxSetup({ async: false });
+            var url = await contractNFT.tokenURI(tokenId);
+            $.get(url, function (data) {
+              console.log(url);
+              auctionTemplate
+                .find(".panel-body .number")
+                .html(
+                  '<img src="' +
+                    data.image +
+                    '" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="' +
+                    data.file +
+                    '" target="_blank">Digital Content Link</a>'
+                );
+              $("#auctionsRow").append(auctionTemplate.html());
+            });
+            //$.ajaxSetup({ async: true });
+          }
+        });
+
+        // fit textsize of large numbers
+        fitty("#auctionsRow .number", {
+          minSize: 20,
+          maxSize: 60,
+        });
+
+        /*
+        var event3 = await contractAuction.queryFilter(filter3);
+
+        var parsedEvents = event.map(function (log) {
+          console.log(log.args.auctionId.toString());
+          //return iface.parseLog(log);
+        });
+
+        jQuery.each(parsedEvents, function (i, val) {
+          console.log(val.args.auctionId.toString());
+        });
+        var tokenNumber = parsedEvents[0].args[1].toString();
+        console.log(parsedEvents[0].args[1].toString());
+        var isExist = await contractAuction.isTokenExist(tokenNumber); //.then((instance) => {
+
+        if (isExist) {
+        }
+
+        var callPromise = provider.getLogs(filter);
+
+        callPromise
+          .then(function (events) {
+            console.log(events);
+            var parsedEvents = events.map(function (log) {
+              return iface.parseLog(log);
+            });
+            console.log(parsedEvents);
+          })
+          .catch(function (err) {
+            console.log(err);
+          });*/
+      }
+    </script>
+  </body>
+</html>

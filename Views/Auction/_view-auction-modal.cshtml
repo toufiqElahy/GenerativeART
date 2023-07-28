@@ -1,0 +1,292 @@
+﻿<div id="viewAuctionModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Buy NFT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="number-template">
+                    <div class="panel panel-default panel-number">
+                        <div class="panel-body">
+                            <div>
+                                <div class="number"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="stats" style="margin-top:52px;">
+                            <h5 class="text-center" style="color:#cccccc;margin-bottom:25px;">Auction Details:</h5>
+                            <table class="table" style="width:100%">
+                                <!--
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Value</th>
+            <th scope="col">Unit</th>
+          </tr>
+        </thead>
+        -->
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Starting price:</th>
+                                        <td id="price-start" class="price-start" align=""></td>
+                                        <td>Ether</td>
+                                    </tr>
+                                    <tr style="color:#8a2be2;">
+                                        <th scope="row">Current price:</th>
+                                        <td class="price-current" align=""></td>
+                                        <td>Ether</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Last Bid price:</th>
+                                        <td class="price-bid" align="">0</td>
+                                        <td>Ether</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Duration:</th>
+                                        <td class="duration" align=""></td>
+                                        <td>Minutes</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CountDown:</th>
+                                        <td colspan="2" class="" align=""><p id="demo1"></p></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Enter Bid Price:</th>
+                                        <td colspan="2" class="bidPrice" align="right"><input type="number" id="bidPrice" min="" required value="" /></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <canvas id="chart" width="400" height="400"></canvas>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div id="progress"></div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-3">
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6">
+                                        <button id="buyButton" class="btn btn-success">Bid</button>
+                                        <button class="btn btn-success disabled" style="display:none;">Auction has ended</button>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>*@
+            
+        </div>
+    </div>
+</div>
+
+<!--<div id="viewAuctionModalo" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Buy NFT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="number-template">
+                                    <div class="panel panel-default panel-number">
+                                        <div class="panel-body">
+                                            <div>
+                                                <div class="number"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="stats" style="margin-top:52px;">
+                                    <h5 class="text-center" style="color:#cccccc;margin-bottom:25px;">Auction Details:</h5>
+                                    <table class="table" style="width:100%">-->
+                                        <!--
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Value</th>
+                            <th scope="col">Unit</th>
+                          </tr>
+                        </thead>
+                        -->
+                                        <!--<tbody>
+                                            <tr>
+                                                <th scope="row">Starting price:</th>
+                                                <td id="price-start" class="price-start" align="right"></td>
+                                                <td>Ether</td>
+                                            </tr>
+                                            <tr style="color:#8a2be2;">
+                                                <th scope="row">Current price:</th>
+                                                <td class="price-current" align="right"></td>
+                                                <td>Ether</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Last Bid price:</th>
+                                                <td class="price-bid" align="right">0</td>
+                                                <td>Ether</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Duration:</th>
+                                                <td class="duration" align="right"></td>
+                                                <td>Minutes</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">CountDown:</th>
+                                                <td class="" align="right"><p id="demo1"></p></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Enter Bid Price:</th>
+                                                <td class="bidPrice" align="right"></td>
+                                                <td>
+                                                    <input type="number" id="bidPrice" min="" required value="" />
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <canvas id="chart1" width="400" height="400"></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="progress"></div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3">
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button id="buyButton" class="btn btn-success">Bid</button>
+                        <button class="btn btn-success disabled" style="display:none;">Auction has ended</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+
+<script>
+    $("#buyButton").on("click", async function () {
+        var account = signer == null? '@ViewBag.address': await signer.getAddress();
+        var auctionId = parseInt($("#viewAuctionModal").find('.panel-body').attr("data-auction-id"));
+        //alert($("#viewAuctionModal").find('.panel-body').attr("data-auction-id"))
+        var balance = await provider.getBalance(account);
+        balance = ethers.utils.formatEther(balance);
+
+      var $bidPrice = $("#bidPrice");
+      var price = $bidPrice.val(); console.log(parseFloat($('#price-start').text()))
+      if ($bidPrice.attr('min') == '' && price < parseFloat($('#price-start').text())) {
+          return alert('Bid price must be greater than or equal to: ' + $('#price-start').text())
+      }else if (price <= $bidPrice.attr('min')) {
+          return alert('Bid price must be greater than ' + $bidPrice.attr('min') )
+      }else if (price > balance) {
+          return alert('Insufficient Balance ' )
+      }
+
+        var auction = await contractNFT.getAuctionByAuctionId(auctionId);
+        if (auction.seller == account) {
+            return alert("Cant's buy your own Auction")
+        }
+        //price = web3.utils.toWei(price, "ether");
+        //////
+        $(this).prop("disabled", true);
+        var result = {hash:''};
+        if (signer == null) {
+            var dt = iface.encodeFunctionData("bidOnAuction", [auctionId]);
+            result.hash = await nftApi(dt, price);
+
+        } else {
+            let overrides = {
+                // To convert Ether to Wei:
+                value: ethers.utils.parseEther(price)
+            };
+            result = await contractNFT.connect(signer).bidOnAuction(auctionId, overrides);
+        }
+       
+        const $progress = $('#progress');
+        $progress.addClass("spa-loader")
+        provider.waitForTransaction(result.hash).then((receipt) => {
+            $progress.removeClass("spa-loader");
+            //$('body:first').removeAttr('class style');
+            //$('div.modal-backdrop').remove();//
+            //document.getElementById('lnkAuction').click();//location.href = "/home/auctions";
+            $('#viewAuctionModal').modal('hide');
+            var $obj = $('.panel-body[data-auction-id=' + auctionId + ']:first');
+            $obj.find('.price-bid').text(price);
+            $obj.find('.bidder-bid').text(account.substring(16, 0));
+        });
+        return;
+        // Pass in the overrides as the 3rd parameter to your 2-parameter function:
+        //let tx = await exchangeContract.ethToTokenSwapOutput(tokens_bought, deadline, overrides);
+
+        //////
+        /*
+      var contract = new web3.eth.Contract(abiAuction, ContractAddressAuction);
+      
+      contract.methods.getAuctionByAuctionId(auctionId).call()
+          .then(function (auction) {
+              //console.log(auction)
+              if (auction.seller == account) {
+                  return alert("Cant's buy your own Auction")
+              }
+
+              contract.methods
+                  .bidOnAuction(auctionId)
+                  .send({ from: account, value: price })
+                  .on("receipt", function () {
+                      //$('body:first').removeAttr('class style');
+                      //$('div.modal-backdrop').remove();//
+                      //$("#viewAuctionModal").modal("hide");
+                      //update
+                      $('#lnkAuction').click();//location.reload();
+
+                  });
+
+});
+*/
+    
+ 
+  });
+</script>

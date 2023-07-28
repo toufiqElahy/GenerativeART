@@ -1,0 +1,317 @@
+﻿<section class="browse-detail-area page-paddings">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                <div class="browse-detail-images text-center">
+                    <div class="browse-tab clearfix">
+                        <ul class="clearfix">
+                            @*<li><i class="fas fa-images"></i> <text id="category"></text></li>*@
+                            @*<li><i class="far fa-eye"></i> 250</li>
+                            <li><i class="fas fa-heart"></i> 18</li>*@
+                        </ul>
+                        <div class="browse-detail-timer">
+                            <span>Auctions ends in <span id="demo1"> </span></span>
+                        </div>
+                    </div>
+                    <div class="browse-detail-large">
+                        <img id="imgData" src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                <div class="browse-detail-info">
+                    <h1 id="title">Get Best Template Here</h1>
+                    <p class="theme-description">This painting is complete made with oil paint showcasing a man with grey hat, you can see all the fine details cearly and this paithing one of it's kind.</p>
+                    <div class="creator-box">
+                        <span>Creator:</span>
+                        <div class="creator-item clearfix">
+                            <div class="creator-media"><img src="" alt=""></div>
+                            <div class="creator-info"><span id="author">Author</span></div>
+                        </div>
+                    </div>
+                    <div class="browse-detail-tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Bids</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">History</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="p_list-main">
+
+                                    <div class="p_list hide" id="bids">
+                                        <div class="p_list_pp">
+                                          
+                                                @*<img class="lazy" src="~/nft/public/images/author-1.jpg" alt="">*@
+                                                
+                                                @*<i class="fas fa-check"></i>*@
+                                          
+                                        </div>
+                                        <div class="p_list_info">
+                                            Bidder : <b id="bidder">0x61A4660b9A48337b9e245a0Ec11E618fB44eB0Ff</b>
+                                            Bidded with: <b id="bidded">0.005 CPAY</b>
+                                            @*<span>by <b>Monica Lucas</b> at 6/15/2021, 3:20 AM</span>*@
+                                        </div>
+                                    </div>
+
+
+                                    @*<div class="p_list">
+                                            <div class="p_list_pp">
+                                                <a href="dark-author.html">
+                                                    <img class="lazy" src="~/nft/public/images/author-1.jpg" alt="">
+                                                    <i class="fas fa-check"></i>
+                                                </a>
+                                            </div>
+                                            <div class="p_list_info">
+                                                Bid accepted <b>0.005 CPAY</b>
+                                                <span>by <b>Monica Lucas</b> at 6/15/2021, 3:20 AM</span>
+                                            </div>
+                                        </div>*@
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="p_list-main">
+                                    @*<div class="p_list">
+                                            <div class="p_list_pp">
+                                                <a href="dark-author.html">
+                                                    <img class="lazy" src="~/nft/public/images/author-5.jpg" alt="">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
+                                            </div>
+                                            <div class="p_list_info">
+                                                Bid <b>0.005 CPAY</b>
+                                                <span>by <b>Jimmy Wright</b> at 6/14/2021, 6:40 AM</span>
+                                            </div>
+                                        </div>
+                                        <div class="p_list">
+                                            <div class="p_list_pp">
+                                                <a href="dark-author.html">
+                                                    <img class="lazy" src="~/nft/public/images/author-5.jpg" alt="">
+                                                    <i class="fa fa-check"></i>
+                                                </a>
+                                            </div>
+                                            <div class="p_list_info">
+                                                Bid <b>0.005 CPAY</b>
+                                                <span>by <b>Jimmy Wright</b> at 6/14/2021, 6:40 AM</span>
+                                            </div>
+                                        </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 hide">
+                            Item Price: <text id="price-start"></text>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <br />
+                        <div class="text-center">
+                            Bid Price:
+                            <input type="number" id="bidPrice" min="" required value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="asset__btns">
+                    <div id="progress"></div>
+                    @*<input type="number" id="bidPrice" min="" required value="" />*@
+                    <button class="theme-btn" id="buyButton">Bid Now </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<script>
+    var auctionId = '@(Context.Request.Query["auctionId"])';
+
+    $("#buyButton").on("click", async function () {
+        
+        var account = signer == null? '@ViewBag.address': await signer.getAddress();
+        //var auctionId = parseInt($("#viewAuctionModal").find('.panel-body').attr("data-auction-id"));
+        //alert($("#viewAuctionModal").find('.panel-body').attr("data-auction-id"))
+        var balance = await provider.getBalance(account);
+        balance = ethers.utils.formatEther(balance);
+
+        var $bidPrice = $("#bidPrice");
+        var price = $bidPrice.val(); console.log(parseFloat($('#price-start').text()))
+        if ($bidPrice.attr('min') == '' && price < parseFloat($('#price-start').text())) {
+            return alert('Bid price must be greater than or equal to: ' + $('#price-start').text())
+        } else if (price <= $bidPrice.attr('min')) {
+            return alert('Bid price must be greater than ' + $bidPrice.attr('min'))
+        }else if (price > balance) {
+          return alert('Insufficient Balance ' )
+      }
+
+        var auction = await contractNFT.getAuctionByAuctionId(auctionId);
+        if (auction.seller == account) {
+            return alert("Cant's buy your own Auction")
+        }
+        //price = web3.utils.toWei(price, "ether");
+        //////
+        $(this).prop("disabled", true);
+        var result = {hash:''};
+        if (signer == null) {
+            var dt = iface.encodeFunctionData("bidOnAuction", [auctionId]);
+            result.hash = await nftApi(dt, price);
+
+        } else {
+            let overrides = {
+                // To convert Ether to Wei:
+                value: ethers.utils.parseEther(price)
+            };
+            result = await contractNFT.connect(signer).bidOnAuction(auctionId, overrides);
+        }
+        
+        const $progress = $('#progress');
+        $progress.addClass("spa-loader")
+        provider.waitForTransaction(result.hash).then((receipt) => {
+            $progress.removeClass("spa-loader");
+            //$('body:first').removeAttr('class style');
+            //$('div.modal-backdrop').remove();//
+            //document.getElementById('lnkAuction').click();//location.href = "/home/auctions";
+            location.reload();
+        });
+        return;
+
+
+
+    });
+</script>
+
+
+<script>
+
+    // Set the date we're counting down to
+
+
+    if (!globalCountDownTimerIsOn) {
+        var interVal = setInterval(function () {
+
+            globalCountDownTimerIsOn = false;
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            try {
+                // Display the result in the element with id="demo"
+                document.getElementById("demo1").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+
+                // If the count down is finished, write some text
+                if (distance < 0) {
+                    //clearInterval(interVal);
+                    document.getElementById("demo1").innerHTML = "EXPIRED";
+                }
+            } catch (e) {
+                clearInterval(interVal);
+                globalCountDownTimerIsOn = false;
+            }
+
+        }, 1000);
+    }
+        // Update the count down every 1 second
+
+    $(function () {
+
+        fnc();
+        fnc1();
+    });
+    async function fnc1() {
+        var bids = await contractNFT.getBidsById(auctionId); console.log(bids);
+        var $bids = $('#bids');
+        for (var i = 0; i < bids.length; i++) {
+            $('#bidder').html(bids[i].from);
+            var prc = ethers.utils.formatEther(bids[i].amount.toString())
+            $('#bidded').html(prc + ' CPAY');
+            $bids.parent().append('<div class="p_list">'+$bids.html()+'</div>')
+        }
+    }
+
+    async function fnc() {
+
+
+        var auction = await contractNFT.getAuctionByAuctionId(auctionId); console.log(auction)
+
+        var tokenId = auctionId;//log.args.tokenId.toString();
+        var startingPrice = auction.startingPrice.toString();
+        startingPrice = ethers.utils.formatEther(startingPrice)
+        var duration = auction.duration.toString();
+        //$('#category').html();
+
+        //var auction = await contractAuction.getAuctionByAuctionId(auctionId);
+        var creationDate = (new Date((auction.startedAt.toString()) * 1000)).toLocaleString();
+        console.log(duration + ' date')
+        var dt = new Date(creationDate);
+        dt.setSeconds(dt.getSeconds() + parseInt(duration));
+        console.log(new Date(dt));
+        countDownDate = new Date(dt).getTime();
+
+
+        var url = await contractNFT.tokenURI(tokenId); console.log(url);
+        url = customIpfsPath(url); console.log(url);
+        $.ajaxSetup({ async: false });
+        $.get(url, function (data) {
+            console.log(url);
+            $('#title').html(data.name);
+            $('.theme-description:first').html(data.description);//
+            $('#author').html(data.author);
+            $('#imgData').attr('src', customIpfsPath(data.image))
+
+
+        });
+        $.ajaxSetup({ async: true });
+
+
+        var rslt = await contractNFT.getCurrentBid(auctionId);
+
+        var bidPrice = rslt[0].toString();
+
+
+        console.log(bidPrice)
+
+        if (bidPrice != '0') {
+
+            bidPrice = ethers.utils.formatEther(bidPrice)
+
+            $('#bidPrice').attr('min', bidPrice).val((parseFloat(bidPrice) + 0.001).toFixed(3))
+        } else {
+            $('#bidPrice').attr('min', '').val(startingPrice)
+        }
+        //$('#viewAuctionModal .price-current').text('~ ' + bidPrice)
+        $('#price-start').html(startingPrice)
+
+
+        var o = await contractNFT.getCurrentPriceByAuctionId(auctionId);
+
+        // convert bigNumber to int
+        var currentPrice = o.toString();// console.log(currentPrice+' hhhhhh');
+        // convert wei to ether
+        currentPrice = ethers.utils.formatEther(currentPrice)
+        //alert(currentPrice)
+        if (currentPrice == 0) {
+            $('#buyButton').hide()
+            //$('.btn-success.disabled').show()
+        } else {
+            // TODO:
+            // check if auction has been cancelled or finished
+            // - need to get events and check if auction with auctionId is amoung them
+            $('#buyButton').show()
+            //$('.btn-success.disabled').hide()
+        }
+        //console.log(data)
+    }
+
+</script>

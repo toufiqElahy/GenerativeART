@@ -1,0 +1,230 @@
+﻿
+<div id="createAuctionModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sell NFT</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="number-template">
+                    <div class="panel panel-default panel-number">
+                        <div class="panel-body">
+                            <div>
+                                <div class="number"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="startingPrice"> Ending price</label>
+                        <input type="number" class="form-control" id="startingPrice" placeholder="Starting price in Ether" value="0.22">
+                        <small class="price-help" class="form-text text-muted">in Ether</small><br>
+                    </div>
+                    <div class="form-group hide">
+                        <label for="endingPrice">Starting price</label>
+                        <input type="hidden" class="form-control" id="endingPrice" placeholder="Ending price in Ether" value="0">
+                        <small class="price-help" class="form-text text-muted">in Ether</small><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration of auction</label>
+                        <input type="number" class="form-control" id="duration" placeholder="Duration of auction" value="1">
+                        <small class="price-help" class="form-text text-muted">in Hours</small>
+                    </div>
+
+                    <div id="progress">
+                        <hr>
+                        <div class="">
+
+                            <h5>Steps:</h5>
+                            <ol>
+                                @*<li>
+                            Allow transfer of NFT
+                            <span class="step-completed"> (completed)</span>
+                        </li>*@
+                                <li>
+                                    Start auction
+                                    <span class="step-completed"> (completed)</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        //HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+                        //FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+
+                        //string userData = ticket.UserData;
+                        var userData = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+                        <button userAddress="@userData" id="submitAuction" type="button" class="btn btn-success" style="width:100%">Publish NFT</button>
+                    }
+
+                </form>
+            </div>
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+
+<div id="createAuctionModal5" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title text-center">Sell NFT</h4>
+            </div>
+            <div class="modal-body">
+                <div class="number-template">
+                    <div class="panel panel-default panel-number">
+                        <div class="panel-body">
+                            <div>
+                                <div class="number"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="startingPrice"> Ending price</label>
+                        <input type="number" class="form-control" id="startingPrice" placeholder="Starting price in Ether" value="0.22">
+                        <small class="price-help" class="form-text text-muted">in Ether</small><br>
+                    </div>
+                    <div class="form-group hide">
+                        <label for="endingPrice">Starting price</label>
+                        <input type="hidden" class="form-control" id="endingPrice" placeholder="Ending price in Ether" value="0">
+                        <small class="price-help" class="form-text text-muted">in Ether</small><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration of auction</label>
+                        <input type="number" class="form-control" id="duration" placeholder="Duration of auction" value="1">
+                        <small class="price-help" class="form-text text-muted">in Hours</small>
+                    </div>
+
+                    <div id="progress">
+                        <hr>
+                        <div class="">
+
+                            <h5>Steps:</h5>
+                            <ol>
+                                @*<li>
+                                    Allow transfer of NFT
+                                    <span class="step-completed"> (completed)</span>
+                                </li>*@
+                                <li>
+                                    Start auction
+                                    <span class="step-completed"> (completed)</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        //HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+                        //FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+
+                        //string userData = ticket.UserData;
+                        var userData = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+                        <button userAddress="@userData" id="submitAuction" type="button" class="btn btn-success" style="width:100%">Publish NFT</button>
+                    }
+
+                </form>
+            </div>
+            <!--
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            -->
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    $('#submitAuction').on("click", async function () {
+      event.preventDefault();
+        var $this = $(event.target);
+        $this.prop("disabled", true);
+        //$this.attr('disabled', '');
+      var userAddress = $this.attr('userAddress');
+    //alert('');
+    // get values
+    let tokenToSell = parseInt(event.target.getAttribute("data-token-id"))+'';
+    let startingPrice = $("#startingPrice").val(); // in ether
+    //let endingPrice = $("#endingPrice").val(); // in ether
+    let duration = $("#duration").val(); // in hours
+    // convert to wei
+        startingPrice = ethers.utils.parseEther(startingPrice);
+      //endingPrice = web3.utils.toWei(endingPrice, "ether");
+    // convert from hours to seconds
+        duration = duration * 60 * 60;
+        
+
+        var account = signer == null? '@ViewBag.address': await signer.getAddress();
+        var result = {hash:''};
+        if (isNaN(tokenToSell)) {
+            var guid = $this.attr("guid");
+            var $nft = $('#' + guid);
+            //alert($nft.attr('category') + ',' + $nft.attr('hash') + ',' + $nft.attr('hash3') + ',' + $nft.attr('hash2'));
+            if (signer == null) {
+                var dt = iface.encodeFunctionData("createAuction", [$nft.attr('category'), $nft.attr('hash'), $nft.attr('hash3'), $nft.attr('hash2'), startingPrice, duration, userAddress]);
+               
+                result.hash = await nftApi(dt);
+
+            } else {
+                result = await contractNFT
+                .connect(signer)
+                .createAuction(
+                    $nft.attr('category'), $nft.attr('hash'), $nft.attr('hash3'), $nft.attr('hash2'),
+                    startingPrice, duration,
+                    userAddress,
+                    { from: account }
+                );
+            }
+            
+            $.get("/home/NftDelete?publish=true&id=" + guid, function (data) {
+                console.log(data);
+            });
+
+        } else {
+            if (signer == null) {
+                var dt = iface.encodeFunctionData("reCreateAuction", [tokenToSell, startingPrice, duration, userAddress]);
+                result.hash = await nftApi(dt);
+
+            } else {
+                result = await contractNFT.connect(signer).reCreateAuction(
+                tokenToSell,
+                startingPrice,
+                //endingPrice,
+                duration,
+                userAddress, //coinpayAddress
+                { from: account }
+            );
+            }
+            
+        }
+
+      const $progress = $('#progress');
+        $progress.addClass("spa-loader");
+        provider.waitForTransaction(result.hash).then((receipt) => {
+            $("#progress ol li:last-child > .step-completed").show();
+            $("#progress ol li:last-child").addClass("step-completed");
+            $progress.removeClass("spa-loader")
+            //$("#createAuctionModal").modal("hide");
+            $('body:first').removeAttr('class style');
+            $('div.modal-backdrop').remove();//
+            document.getElementById('lnkAuction').click();//location.href = "/home/auctions";
+
+
+        });
+
+  });
+</script>

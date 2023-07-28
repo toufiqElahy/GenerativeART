@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Buy your favorite NFT</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custom-styles.css" rel="stylesheet" />
+    <link href="css/overlay-no-web3.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/ipfs-http-client@30.1.3/dist/index.js"></script>
+    <script src="https://bundle.run/buffer@5.2.1"></script>
+
+    <script src="js/assets/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.4.0/web3.min.js"></script>
+    <script src="js/assets/fitty.min.js"></script>
+
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+    ></script>
+    <script src="js/init-web3.js"></script>
+    <script src="js/navbar-header.js"></script>
+
+    <script>
+      const ipfs = window.IpfsHttpClient("ipfs.infura.io", "5001", {
+        protocol: "https",
+      });
+      var encode = function (s) {
+        var out = [];
+        for (var i = 0; i < s.length; i++) {
+          out[i] = s.charCodeAt(i);
+        }
+        return new Uint8Array(out);
+      };
+      function getIpfsHashAsync(input, obj = null) {
+        return new Promise((resolve, reject) => {
+          let reader = new FileReader();
+
+          reader.onload = () => {
+            const magic_array_buffer_converted_to_buffer = buffer.Buffer(
+              reader.result
+            ); // honestly as a web developer I do not fully appreciate the difference between buffer and arrayBuffer
+
+            resolve(ipfs.add(magic_array_buffer_converted_to_buffer));
+          };
+
+          reader.onerror = reject;
+
+          if (input == "") {
+            var str = JSON.stringify(obj);
+            var data = encode(str);
+
+            var blob = new Blob([data], {
+              type: "application/octet-stream",
+            });
+
+            reader.readAsArrayBuffer(blob);
+          } else {
+            reader.readAsArrayBuffer(document.getElementById(input).files[0]);
+          }
+        });
+      }
+
+      $(function () {
+        // load navbar and modal
+        $("#app > .navbar").load("navbar-header.html");
+        // initialize smart contracts
+        //App.initContracts();
+
+        $("#btn-mint").on("click", async function () {
+          var $this = $(event.target);
+          $this.prop("disabled", true);
+
+          $this.text("Progress: ..");
+          const tokenToBuy = parseInt($(event.target).data("token-id"));
+
+          var obj = {};
+          obj.name = $("#name").val();
+          obj.description = $("#description").val();
+
+          $this.text("Progress: Uploading File 1....");
+          var rslt = await getIpfsHashAsync("file1");
+          obj.image = "https://gateway.ipfs.io/ipfs/" + rslt[0].hash;
+          $this.text("Progress: Uploading File 2......");
+          rslt = await getIpfsHashAsync("file2");
+          obj.file = "https://gateway.ipfs.io/ipfs/" + rslt[0].hash;
+          $this.text("Progress: Uploading IPFS Hashes........");
+          rslt = await getIpfsHashAsync("", obj);
+          $this.text("IPFS Hash: " + rslt[0].hash);
+          console.log("https://gateway.ipfs.io/ipfs/" + rslt[0].hash);
+
+          var rnd = Math.floor(10000 + Math.random() * 90000);
+          console.log(rnd);
+          var account = await signer.getAddress();
+          var result = await contractNFT
+            .connect(signer)
+            .mintWithUri(
+              account,
+              rnd,
+              "https://gateway.ipfs.io/ipfs/" + rslt[0].hash,
+              "toufiqelahy@hotmail.com",
+              { from: account }
+            );
+          console.log(result);
+
+          provider.waitForTransaction(result.hash).then((receipt) => {
+            console.log("Transaction Mined: " + receipt.transactionHash);
+            location.href = "/inventory.html";
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-default"></nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 class="text-center">Create NFT</h1>
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-3"></div>
+          <div id="searchContainer" class="col-sm-12 col-md-6 text-center">
+            <form>
+              <div class="form-inline">
+                <div class="form-group">
+                  <label for="file1">Upload An Image</label>
+                  <input type="file" class="form-control-file" id="file1" />
+                </div>
+              </div>
+              <br />
+              <div class="form-group">
+                <img
+                  id="blah"
+                  src="#"
+                  alt="Preview image"
+                  class="thumbnail"
+                  width=""
+                  height="200"
+                />
+              </div>
+
+              <br />
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder=""
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                  class="form-control"
+                  id="description"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div class="form-inline">
+                <div class="form-group">
+                  <label for="file2"
+                    >Upload File: PNG, GIF, WEBP, MP4 or MP3. Max 30mb.</label
+                  >
+                  <input type="file" class="form-control-file" id="file2" />
+                </div>
+              </div>
+              <br /><br />
+              <button id="btn-mint" type="button" class="btn btn-primary">
+                Mint NFT
+              </button>
+            </form>
+
+            <small
+              id="errorMessage"
+              class="form-text text-muted text-info"
+              style="width: 100%; display: none"
+            >
+              Error
+            </small>
+          </div>
+          <div class="col-sm-12 col-md-3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

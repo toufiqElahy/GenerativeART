@@ -1,0 +1,298 @@
+﻿@{ Layout = null; }
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CoinPay.cr : Receive, Pay and Send</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:description" content="Billetera y Mercado de Cripto-Monedas,Soluciones Latinoamericanas de Blockchain">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <link rel="stylesheet" href="~/Content/siteLogin.css">
+    <style></style>
+
+    <style>
+        p[_ngcontent-c3] {
+            font-family: Roboto-Light
+        }
+
+        @@font-face {
+            font-family: Roboto-Light;
+            src: url(/assets/fonts/Roboto-Light.ttf)
+        }
+
+        .content[_ngcontent-c3] {
+            background: inherit !important;
+            border-radius: 8px;
+            box-shadow: 0 0 32px rgba(0,0,0,.5) !important
+        }
+
+        .text-login[_ngcontent-c3] {
+            padding: 16px;
+            background: rgba(255,255,255,.8) !important;
+            box-sizing: border-box
+        }
+
+        .animated[_ngcontent-c3] {
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both
+        }
+
+        .fast[_ngcontent-c3] {
+            -webkit-animation-duration: .4s;
+            animation-duration: .4s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both
+        }
+
+        @@-webkit-keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .fadeIn[_ngcontent-c3] {
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn
+        }
+
+        .form-signin[_ngcontent-c3] {
+            display: block;
+            box-shadow: 0 0 3px 3px #888;
+            border-radius: 2px
+        }
+
+        .main[_ngcontent-c3] {
+            padding: 38px
+        }
+
+        .social-box[_ngcontent-c3] {
+            margin: 0 auto;
+            padding: 38px;
+            border-bottom: 1px solid #ccc
+        }
+
+            .social-box[_ngcontent-c3] a[_ngcontent-c3] {
+                font-weight: 700;
+                font-size: 18px;
+                padding: 8px
+            }
+
+                .social-box[_ngcontent-c3] a[_ngcontent-c3] i[_ngcontent-c3] {
+                    font-weight: 700;
+                    font-size: 20px
+                }
+
+        .heading-desc[_ngcontent-c3] {
+            font-size: 20px;
+            font-weight: 700;
+            padding: 38px 38px 0
+        }
+
+        .heading-desc2[_ngcontent-c3] {
+            font-size: 15px;
+            font-weight: 700;
+            padding: 38px 38px 0;
+            margin-top: -35px
+        }
+
+        .form-signin[_ngcontent-c3] .checkbox[_ngcontent-c3], .form-signin[_ngcontent-c3] .form-signin-heading[_ngcontent-c3] {
+            margin-bottom: 10px
+        }
+
+        .form-signin[_ngcontent-c3] .checkbox[_ngcontent-c3] {
+            font-weight: 400
+        }
+
+        .form-signin[_ngcontent-c3] .form-control[_ngcontent-c3] {
+            position: relative;
+            font-size: 16px;
+            height: 20px;
+            padding: 20px;
+            box-sizing: border-box
+        }
+
+            .form-signin[_ngcontent-c3] .form-control[_ngcontent-c3]:focus {
+                z-index: 2
+            }
+
+        .form-signin[_ngcontent-c3] input[type=password][_ngcontent-c3], .form-signin[_ngcontent-c3] input[type=text][_ngcontent-c3] {
+            margin-bottom: 10px;
+            border-radius: 5px
+        }
+
+        .login-footer[_ngcontent-c3] {
+            background: #f0f0f0;
+            margin: 0 auto;
+            border-top: 1px solid #dadada;
+            padding: 20px
+        }
+
+            .login-footer[_ngcontent-c3] .left-section[_ngcontent-c3] a[_ngcontent-c3] {
+                font-weight: 700;
+                color: #8a8a8a;
+                line-height: 19px
+            }
+
+        .mg-btm[_ngcontent-c3] {
+            margin-bottom: 20px
+        }
+
+        .formLogin[_ngcontent-c3] {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 30em;
+            margin-top: -10em;
+            margin-left: -15em;
+            border: 1px solid #ccc
+        }
+
+        .libfin[_ngcontent-c3] .ThemeColor[_ngcontent-c3] {
+            background-color: transparent !important;
+            color: #000 !important;
+            text-align: left !important
+        }
+    </style>
+    <style>
+        .bg_Nav[_ngcontent-c4] {
+            background: linear-gradient(to right,#000 0,#000 55%,#1c1508 100%);
+            border-bottom: 4px solid #1c2a48;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)
+        }
+
+        .aling_text[_ngcontent-c4] {
+            text-align: right
+        }
+
+        .ul_style[_ngcontent-c4] {
+            list-style: none !important
+        }
+
+        .icon_Rss[_ngcontent-c4] {
+            width: 50px;
+            height: auto
+        }
+
+        #navItem[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4] {
+            color: #eee !important;
+            margin-left: 5px;
+            margin-right: 8px
+        }
+
+            #navItem[_ngcontent-c4] li[_ngcontent-c4] a[_ngcontent-c4]:hover {
+                background-color: #1c2331
+            }
+
+        .mainLogo[_ngcontent-c4] {
+            width: 90px;
+            height: auto
+        }
+    </style>
+    <style>
+        div[_ngcontent-c7], h1[_ngcontent-c7], h2[_ngcontent-c7], h3[_ngcontent-c7], h4[_ngcontent-c7], input[_ngcontent-c7], label[_ngcontent-c7], p[_ngcontent-c7], span[_ngcontent-c7], th[_ngcontent-c7] {
+            font-family: Roboto-Light
+        }
+
+        .box[_ngcontent-c7] {
+            border: 1px solid #ccc
+        }
+
+        .box-fee[_ngcontent-c7] {
+            border: 1px solid #ccc;
+            background: inherit !important;
+            border-radius: 3px;
+            box-shadow: 0 0 8px rgba(0,0,0,.5) !important;
+            font-weight: 700
+        }
+
+        .header[_ngcontent-c7] {
+            text-align: center;
+            background-color: #3d3b4e;
+            font-family: Roboto-Light;
+            padding: 15px;
+            color: #fff
+        }
+    </style>
+    <style media="print" class="jx_ui_StyleSheet" __jx__id="___$_2" type="text/css">
+        .zopim {
+            display: none !important
+        }
+    </style>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/39/8/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/39/8/util.js"></script>
+</head>
+
+<body>
+
+    <app-root _nghost-c0="" ng-version="7.1.4">
+        <router-outlet _ngcontent-c0=""></router-outlet><app-login _nghost-c3="" class="ng-star-inserted">
+            <!----><div _ngcontent-c3="" class="ng-star-inserted">
+                <div _ngcontent-c3="">
+                    <app-simple-header _ngcontent-c3="" _nghost-c4="">
+                        <div _ngcontent-c4="" class="btccardshop">
+                            <header _ngcontent-c4="" id="header">
+                                <div _ngcontent-c4="" class="container">
+                                    <div _ngcontent-c4="" class="pull-left" id="logo">
+                                        <a _ngcontent-c4="" href="/landing">
+                                            <!----><img _ngcontent-c4="" alt="" class="img-fluid ng-star-inserted" src=""><!----><!---->
+                                        </a>
+                                    </div><nav _ngcontent-c4="" id="nav-menu-container"><ul _ngcontent-c4="" class="nav-menu pull-right"><li _ngcontent-c4=""><a _ngcontent-c4="" class="nav-link grnTxtMenu" href="/landing"><i _ngcontent-c4="" class="fa fa-home"></i> &nbsp; Home </a></li></ul></nav>
+                                </div>
+                            </header>
+                        </div>
+                    </app-simple-header>
+                </div><div _ngcontent-c3="" class="container-fluid animated fadeIn btccardshop" style="background-image: url(https://coinpay.cr/assets/CssSites/btccardshop/img/background_be.jpg);background-size: cover; background-position: center;">
+                    <div _ngcontent-c3="" class="container">
+                        <div _ngcontent-c3="" class="row" style="margin-top:10%;">
+                            <div _ngcontent-c3="" class="col-md-8 col-xs-12 mb-3">
+                                <div _ngcontent-c3="" class="card content text-login">
+                                    <i _ngcontent-c3="" class="fa fa-user-circle text-white" fa-x2=""></i><h2 _ngcontent-c3="" class="ThemeColor text-uppercase"> Login</h2><div _ngcontent-c3="" class="card-block">
+                                        <!----><p-messages _ngcontent-c3="" class="ng-tns-c5-1"><!----></p-messages><!---->
+                                        <form action="@Url.Action("Login","Home")" method="post" _ngcontent-c3="" class="stopAjax form-horizontal ng-untouched ng-pristine ng-star-inserted ng-invalid" name="" novalidate="">
+                                         
+                                            <div style="color:red">@TempData["msg"]</div>
+                                            <div _ngcontent-c3="" class="form-group"><label _ngcontent-c3="" for="email">Email</label><input _ngcontent-c3="" class="form-control ng-untouched ng-pristine ng-invalid" name="Email" placeholder="Enter your email" required="" type="Email"><!----></div>
+                                            <div _ngcontent-c3="" class="form-group"><label _ngcontent-c3="" for="password">Password</label><input _ngcontent-c3="" class="form-control ng-untouched ng-pristine ng-invalid" name="Password" placeholder="Enter your password" required="" type="password"><!----></div>
+                                            <div _ngcontent-c3="" class="form-group col-xs-12 g-recaptcha ng-star-inserted">
+                                            </div><button _ngcontent-c3="" class="btn btn-info btn-block" type="submit"><!----><div _ngcontent-c3="" class="ng-star-inserted">Login</div><!----></button>
+                                        </form><p-messages _ngcontent-c3="" class="ng-tns-c5-2"><!----></p-messages>
+                                    </div><!----><div _ngcontent-c3="" class="card-footer text-muted ng-star-inserted"><a _ngcontent-c3="" target="_blank" href="https://coinpay.cr/rememberpass">¿Forgot your Password?</a></div>
+                                </div>
+                            </div><!----><div _ngcontent-c3="" class="col-md-4 col-xs-12 ng-star-inserted"><div _ngcontent-c3="" class="card content text-login"><h3 _ngcontent-c3="" class="ThemeColor"><i _ngcontent-c3="" aria-hidden="true" class="fa fa-user-plus"></i> ¿Need an Account? </h3><div _ngcontent-c3="" class="card-block"><h4 _ngcontent-c3="" class="card-title"><a _ngcontent-c3="" class="btn btn-info btn-block text-uppercase" target="_blank" href="https://coinpay.cr/signuprouter" tabindex="0"> Create a new account </a></h4><p _ngcontent-c3="" class="card-text"><i _ngcontent-c3="" class="fa fa-user"></i> Personal account <i _ngcontent-c3="" class="fa fa-building"></i> Business account </p></div></div></div>
+                        </div>
+                    </div>
+                </div><p-dialog _ngcontent-c3="" modal="true" class="ng-tns-c6-3"><!----></p-dialog>
+            </div>
+        </app-login><p-toast _ngcontent-c0="" class="ng-tns-c1-0"><div class="ng-tns-c1-0 ui-toast ui-widget ui-toast-top-right" style="margin-top: 50px;"><!----></div></p-toast>
+    </app-root>
+
+
+
+
+
+</body>
+</html>

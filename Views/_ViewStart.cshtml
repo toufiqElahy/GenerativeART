@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions;
+@{
+
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+
+    Context.Response.Headers["Cache-Control"] = "no-store";
+    if (Context.Request.Headers["X-Requested-With"] == "XMLHttpRequest")//if ajax request
+    {
+
+
+        var url = Context.Request.GetDisplayUrl();
+        //var path = Context.Request.Path.ToString();// //controller/action..
+
+        //string baseUrl = url.Replace(path, "");// domain
+        Context.Response.Headers["Location"] = url;//RawUrl
+                                                       //Context.Response.Headers["Cache-Control"] = "no-store";//context.HttpContext.Response.Cache.SetNoStore(); //stop caching(partial content) on client's browser
+    }
+    else
+    {
+        if (controller == "auction")
+        {
+            Layout = "~/Views/Shared/_LayoutAuction.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_Layout.cshtml";
+        }
+
+    }
+}
+
+
+
