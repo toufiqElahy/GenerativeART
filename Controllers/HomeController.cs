@@ -21,6 +21,7 @@ using Nethereum.Web3.Accounts;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using AnimatedGif;
 
 namespace GenerativeNFT.Controllers
 {
@@ -52,12 +53,23 @@ namespace GenerativeNFT.Controllers
                 string wwwPath = this.Environment.WebRootPath;
 
                 var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
-                string targetFolder = wwwPath + "/Images/" + addr + "output/images";
+                string targetFolder = wwwPath + "/Images/" + addr + "output/images/";
                 var fe = new FileInfo(targetFolder);
                 if (fe.Directory.Exists)
                 {
-                    string[] filePaths = Directory.GetFiles(targetFolder);
-                    return View(filePaths);
+                    string[] fileNames = Directory.GetFiles(targetFolder);
+                    /////
+                    // 33ms delay (~30fps)
+                    using (var gif = AnimatedGif.AnimatedGif.Create(Path.Combine(targetFolder, "output.gif"), 20))
+                    {
+                        for (var i = 0; i < fileNames.Length; i++)
+                        {
+                            //Image img = Image..FromFile(Path.Combine(outputPath, $"{i.ToString().PadLeft(3, '0')}.png"));
+                            gif.AddFrame(fileNames[i],-100);
+                        }
+                    }
+                    /////
+                    return View(Directory.GetFiles(targetFolder));
                 }
                
             }
