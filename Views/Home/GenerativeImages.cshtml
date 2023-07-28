@@ -20,13 +20,21 @@
                 </label>
                 <span class="switch-label" style="margin-right: 0px;">Easy</span>
             </div>*@
-            @using (Html.BeginForm("UploadLayers", "GenerativeArt", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            @if (TempData["IsLayerCreate"] == null)
             {
-                <h2>Upload Layers Folders:</h2>
-                <input type="file" id="files" name="files" webkitdirectory multiple />
-                <input type="submit" value="upload"/>
-                <br />
-}
+                @using (Html.BeginForm("UploadLayers", "GenerativeArt", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <h2>Upload Layers Folders:</h2>
+                    <input type="file" id="files" name="files" webkitdirectory multiple />
+                    <input type="submit" value="upload" />
+                    <br />
+                }
+            }
+            else
+            {
+                <h5>Folders uploaded..</h5>
+            }
+            
 
             <div class="mint-item-main-box">
                 @using (Html.BeginForm("GenerativeImages", "GenerativeArt", FormMethod.Post, new { enctype = "multipart/form-data" }))

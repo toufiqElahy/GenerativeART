@@ -32,7 +32,6 @@ namespace GenerativeNFT.Controllers
         public async Task<IActionResult> UploadLayers([FromForm] IFormFileCollection files)
         {
             string wwwPath = this.Environment.WebRootPath;
-            string contentPath = this.Environment.ContentRootPath;
 
             var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
             string targetFolder = wwwPath + "/Images/" + addr + "layers/";
@@ -61,6 +60,7 @@ namespace GenerativeNFT.Controllers
                 using var fileStream = new FileStream(path, FileMode.Create);
                 await file.CopyToAsync(fileStream);
             }
+            TempData["IsLayerCreate"] = true;
             return RedirectToAction("GenerativeImages","Home");
         }
         //public IActionResult Index()
@@ -71,7 +71,7 @@ namespace GenerativeNFT.Controllers
         public ActionResult GenerativeImages(string metadataDescription, string metadataImageBaseUri, string metadataExternalUrl, int collectionSize, int collectionInitialNumber, string collectionImagePrefix)
         {
             string wwwPath = this.Environment.WebRootPath;
-            string contentPath = this.Environment.ContentRootPath;
+            //string contentPath = this.Environment.ContentRootPath;
 
             var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value+"\\";
             ////string physicalPath = Server.MapPath("~/images/" + ImageName);
@@ -124,7 +124,7 @@ namespace GenerativeNFT.Controllers
             Task.Run(() => bgw.RunWorkerAsync());
             //bgw.RunWorkerAsync();
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
         private void OnCollectionItemProcessed(object sender, ImageEventArgs e)
         {

@@ -35,6 +35,11 @@ namespace GenerativeNFT.Controllers
         //    _signInManager = signInManager;
         //    //_ctx = ctx;
         //}
+        private IWebHostEnvironment Environment;
+        public HomeController(IWebHostEnvironment _environment)//, ILayerService layerService, ICollectionService collectionService, IMetadataService metadataService)
+        {
+            Environment = _environment;
+        }
         public ActionResult GenerativeImages()
         {
             return View();
@@ -42,6 +47,21 @@ namespace GenerativeNFT.Controllers
         //[Authorize]
         public IActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                string wwwPath = this.Environment.WebRootPath;
+
+                var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
+                string targetFolder = wwwPath + "/Images/" + addr + "output/images";
+                var fe = new FileInfo(targetFolder);
+                if (fe.Directory.Exists)
+                {
+                    string[] filePaths = Directory.GetFiles(targetFolder);
+                    return View(filePaths);
+                }
+               
+            }
+                
             return View();
         }
         [HttpPost]

@@ -1,4 +1,6 @@
-﻿<div class="user-panel-breadcrumb">
+﻿
+
+<div class="user-panel-breadcrumb">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="user-panel-breadcrumb-left">
@@ -47,30 +49,7 @@
                                 <input class="theme-input" type="text" id="description" name="description" required>
                             </div>
 
-                            <div class="theme-input-box">
-                                <label style="margin: 0px;">Upload item preview images. <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="These are the images people will see when browsing your NFT. The first image uploaded is the image on the token"></i></label>
-                                <p class="theme-description">The first preview image you upload will be displayed on <b>all wallets as the token image!</b> (.GLB files will be displayed in an interactive 3D viewer)</p>
-                                <div class="upload-images-box clearfix">
-                                    <div class="upload-images-item">
-                                        @*<i class="fas fa-plus"></i>*@
-                                        <input type="file" class="" id="file1" name="file1" required />
-                                        <p class="theme-description">Add Images </p>
-
-
-                                    </div><img src="public/images/addfiles.svg" id="blah">
-                                </div>
-                            </div>
-                            <div class="theme-input-box">
-                                <label>Upload a private/unlockable item file. <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="This is a private file that only the owner of your NFT can download. Max size 2gb, any file type accepted"></i></label>
-                                <div class="theme-file-upload text-center">
-                                    <div class="file-upload-ico">
-                                        <img src="public/images/addfiles.svg" alt="">
-                                    </div>
-                                    <h3 class="theme-title">Click to add your private file</h3>
-                                    <input type="file" class="" id="file2" name="file2" />
-                                    <p class="theme-description">(items may be audio, video, image, files, ZIP, documents and many more)</p>
-                                </div>
-                            </div>
+                            
                             @*<div class="theme-input-box">
                                 <label>Listing subtitle</label>
                                 <textarea class="theme-input" id="editor" rows="4"></textarea>
@@ -115,6 +94,26 @@
                                                         <button email="@User.Identity.Name" id="btn-mintC" type="submit" class="theme-btn">Mint NFT</button>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                @if (Model != null)
+                                                {
+                                                    @foreach (var item in Model)
+                                                    {
+
+                                                        <div class="col-md-4">
+                                                            <div class="thumbnail">
+                                                                <img src="@(item.Substring(item.IndexOf("wwwroot/") + 7))" />
+                                                                <div class="caption">
+                                                                    <p>...</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    }
+                                                }
+                                                
                                             </div>
                                         </div>
                                     </div>
