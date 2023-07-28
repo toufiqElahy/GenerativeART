@@ -58,18 +58,8 @@ namespace GenerativeNFT.Controllers
                 if (fe.Directory.Exists)
                 {
                     string[] fileNames = Directory.GetFiles(targetFolder);
-                    /////
-                    // 33ms delay (~30fps)
-                    using (var gif = AnimatedGif.AnimatedGif.Create(Path.Combine(targetFolder, "output.gif"), 20))
-                    {
-                        for (var i = 0; i < fileNames.Length; i++)
-                        {
-                            //Image img = Image..FromFile(Path.Combine(outputPath, $"{i.ToString().PadLeft(3, '0')}.png"));
-                            gif.AddFrame(fileNames[i],-100);
-                        }
-                    }
-                    /////
-                    return View(Directory.GetFiles(targetFolder));
+                    
+                    return View(fileNames);
                 }
                
             }
@@ -77,33 +67,59 @@ namespace GenerativeNFT.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(IFormFile file1,Nft nft, IFormFile file2)
+        public async Task<IActionResult> Index(Nft nft)
         {
-            var hash = await PinataService.GetHashAsync(new StreamContent(file1.OpenReadStream()), file1.FileName);
-            nft.hash = hash;
-            //var v= await PinataService.UnPinAsync(hash);
-            var payload = new 
-            {
-                name=nft.name,
-                description=nft.description,
-                image="ipfs://"+hash+"/"+file1.FileName,
-                author=User.Identity.Name.Split('@')[0]
-            };
-            nft.image = payload.image;
-            var stringPayload = JsonConvert.SerializeObject(payload);
-            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-            hash = await PinataService.GetHashAsync(httpContent, "metadata.json");
-            nft.metadata = hash + "/metadata.json";//already prefixed "ipfs://" + 
+            string wwwPath = this.Environment.WebRootPath;
 
-            if (file2 != null)
+            var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
+            string targetFolder = wwwPath + "/Images/" + addr + "output/";
+            string finalFolder = wwwPath + "/Images/" + addr + nft.id+ "/";
+            string[] fileNames = Directory.GetFiles(targetFolder+"images/");
+            /////
+            // 33ms delay (~30fps)
+            using (var gif = AnimatedGif.AnimatedGif.Create(Path.Combine(targetFolder, nft.id+".gif"), 20))
             {
-                 hash = await PinataService.GetHashAsync(new StreamContent(file2.OpenReadStream()), file2.FileName);
-                nft.secretLink = "ipfs://" + hash + "/"+ file2.FileName;
+                for (var i = 0; i < fileNames.Length; i++)
+                {
+                    //Image img = Image..FromFile(Path.Combine(outputPath, $"{i.ToString().PadLeft(3, '0')}.png"));
+                    gif.AddFrame(fileNames[i]);
+                }
             }
+            /////
+            Directory.Move(targetFolder, finalFolder);
+
             nft.email = User.Identity.Name;
             Nftcrud.nftList.Add(nft);
             return RedirectToAction("Inventory");
         }
+        //[HttpPost]
+        //public async Task<IActionResult> Index(IFormFile file1,Nft nft, IFormFile file2)
+        //{
+        //    var hash = await PinataService.GetHashAsync(new StreamContent(file1.OpenReadStream()), file1.FileName);
+        //    nft.hash = hash;
+        //    //var v= await PinataService.UnPinAsync(hash);
+        //    var payload = new 
+        //    {
+        //        name=nft.name,
+        //        description=nft.description,
+        //        image="ipfs://"+hash+"/"+file1.FileName,
+        //        author=User.Identity.Name.Split('@')[0]
+        //    };
+        //    nft.image = payload.image;
+        //    var stringPayload = JsonConvert.SerializeObject(payload);
+        //    var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+        //    hash = await PinataService.GetHashAsync(httpContent, "metadata.json");
+        //    nft.metadata = hash + "/metadata.json";//already prefixed "ipfs://" + 
+
+        //    if (file2 != null)
+        //    {
+        //         hash = await PinataService.GetHashAsync(new StreamContent(file2.OpenReadStream()), file2.FileName);
+        //        nft.secretLink = "ipfs://" + hash + "/"+ file2.FileName;
+        //    }
+        //    nft.email = User.Identity.Name;
+        //    Nftcrud.nftList.Add(nft);
+        //    return RedirectToAction("Inventory");
+        //}
         [Authorize]
         public IActionResult Index2()
         {
