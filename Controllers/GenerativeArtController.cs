@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace GenerativeNFT.Controllers
@@ -27,6 +28,41 @@ namespace GenerativeNFT.Controllers
             Environment = _environment;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> UploadLayers([FromForm] IFormFileCollection files)
+        {
+            string wwwPath = this.Environment.WebRootPath;
+            string contentPath = this.Environment.ContentRootPath;
+
+            var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
+            string targetFolder = wwwPath + "/Images/" + addr + "layers/";
+
+            var fe = new FileInfo(targetFolder);
+            if (fe.Directory.Exists)
+            {
+                fe.Directory.Delete(true);
+            }
+
+            //target in wwwroot for static files
+            //string targetFolder = Path.Combine(_env.WebRootPath, "uploads");
+            foreach (IFormFile file in files)
+            {
+                if (file.Length <= 0) continue;
+
+                //fileName is the the fileName including the relative path
+                var filePath = file.FileName.Substring(file.FileName.IndexOf('/') + 1);
+                string path = Path.Combine(targetFolder, filePath);
+
+                //check if folder exists, create if not
+                var fi = new FileInfo(path);
+                fi.Directory?.Create();
+
+                //copy to target
+                using var fileStream = new FileStream(path, FileMode.Create);
+                await file.CopyToAsync(fileStream);
+            }
+            return RedirectToAction("GenerativeImages","Home");
+        }
         //public IActionResult Index()
         //{
         //    return View();
@@ -37,7 +73,7 @@ namespace GenerativeNFT.Controllers
             string wwwPath = this.Environment.WebRootPath;
             string contentPath = this.Environment.ContentRootPath;
 
-            var addr = "";//"User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value+"\\";
+            var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value+"\\";
             ////string physicalPath = Server.MapPath("~/images/" + ImageName);
             string layersFolder = wwwPath+"\\Images\\" + addr + "layers";
             string outputFolder = wwwPath + "\\Images\\" + addr+ "output";
