@@ -30,8 +30,8 @@ builder.Services.AddScoped<IMetadataService, MetadataService>();
 builder.Services.AddScoped<IRarityService, RarityService>();
 
 
-builder.Services.AddControllersWithViews();
-
+//builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
