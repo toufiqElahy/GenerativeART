@@ -45,6 +45,18 @@ namespace GenerativeNFT.Controllers
         {
             return View();
         }
+        public IActionResult Arts(string addr,string id)
+        {
+                string wwwPath = this.Environment.WebRootPath;
+
+                string targetFolder = wwwPath + "/Images/" + addr+"/"+id + "/images/";
+                
+                    string[] fileNames = Directory.GetFiles(targetFolder);
+
+                    return View(fileNames);
+              
+
+        }
         //[Authorize]
         public IActionResult Index()
         {
@@ -90,9 +102,9 @@ namespace GenerativeNFT.Controllers
         {
             string wwwPath = this.Environment.WebRootPath;
 
-            var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
-            string targetFolder = wwwPath + "/Images/" + addr + "output/";
-            string finalFolder = wwwPath + "/Images/" + addr + nft.id+ "/";
+            var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+            string targetFolder = wwwPath + "/Images/" + addr + "/output/";
+            string finalFolder = wwwPath + "/Images/" + addr+"/" + nft.id+ "/";
             ////
             if (files.Count > 0)
             {
@@ -112,7 +124,7 @@ namespace GenerativeNFT.Controllers
             }
             /////
             Directory.Move(targetFolder, finalFolder);
-
+            nft.creatorEthAddr= addr;
             nft.email = User.Identity.Name;
             Nftcrud.nftList.Add(nft);
             return RedirectToAction("Inventory");

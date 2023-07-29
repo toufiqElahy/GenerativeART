@@ -16,8 +16,9 @@ namespace GenerativeNFT.Models
         public string secretLink { get; set; }
         public string hash { get; set; }
         public DateTime dt { get; set; } = DateTime.UtcNow;
+        public string creatorEthAddr { get; set; }
         public string email { get; set; }
-        public string status { get; set; } = "Reviewing";//Approved/Declined
+        public string status { get; set; } = "Approved";//Approved/Declined
     }
 
     public static class Nftcrud

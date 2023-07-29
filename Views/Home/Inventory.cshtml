@@ -54,7 +54,7 @@
                         </div>
                         <div class="item-group-content">
                             <div class="item-group-avtar">
-                                <img src="@Nftcrud.customIpfsUrl(item.image)" height="200px" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="@(string.IsNullOrEmpty(item.secretLink)? Nftcrud.customIpfsUrl(item.image):Nftcrud.customIpfsUrl(item.secretLink))" target="_blank">Digital Content Link</a>
+                                <img src="/Images/@item.creatorEthAddr/@item.id/@(item.id+".gif")" height="200px" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="/home/Arts?addr=@item.creatorEthAddr&id=@item.id" target="_blank">Arts Content Link</a>
 
                             </div>
                             <h3 class="user-theme-title">@item.name</h3>
@@ -209,7 +209,7 @@
 
 
                 // add thousands seperators
-                //let formattedNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            //let formattedNumber = number.toString()customIpfsUrl(/\B(?=(\d{3})+(?!\d))/g, ',')
                 // append number to dom
                 const accNumberRow = $('#accNumberRow');
                 const accNumberTemplate = $('#accNumberTemplate')
