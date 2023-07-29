@@ -58,22 +58,47 @@ namespace GenerativeNFT.Controllers
                 if (fe.Directory.Exists)
                 {
                     string[] fileNames = Directory.GetFiles(targetFolder);
-                    
+
                     return View(fileNames);
                 }
-               
+
             }
-                
+
             return View();
         }
+        private async Task upload([FromForm] IFormFileCollection files,string targetFolder)
+        {
+            foreach (IFormFile file in files)
+            {
+                if (file.Length <= 0) continue;
+
+                //fileName is the the fileName including the relative path
+                //var filePath = file.FileName.Substring(file.FileName.IndexOf('/') + 1);
+                string path = Path.Combine(targetFolder, file.FileName);
+
+                //check if folder exists, create if not
+                var fi = new FileInfo(path);
+                fi.Directory?.Create();
+
+                //copy to target
+                using var fileStream = new FileStream(path, FileMode.Create);
+                await file.CopyToAsync(fileStream);
+            }
+        }
         [HttpPost]
-        public async Task<IActionResult> Index(Nft nft)
+        public async Task<IActionResult> Index(Nft nft, [FromForm] IFormFileCollection files)
         {
             string wwwPath = this.Environment.WebRootPath;
 
             var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
             string targetFolder = wwwPath + "/Images/" + addr + "output/";
             string finalFolder = wwwPath + "/Images/" + addr + nft.id+ "/";
+            ////
+            if (files.Count > 0)
+            {
+                await upload(files, targetFolder + "images/");
+            }
+            ///
             string[] fileNames = Directory.GetFiles(targetFolder+"images/");
             /////
             // 33ms delay (~30fps)

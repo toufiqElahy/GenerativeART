@@ -91,6 +91,26 @@
                                                     <div class="theme-fix-btn">
                                                         @*<button class="theme-btn">List this Item</button>*@
                                                         <div id="progress"></div>
+                                                        @if (Model == null)
+                                                        {
+                                                            <h2>Upload All Images : </h2>
+                                                            <input type="file" id="files" name="files" multiple />
+                                                            @*<input type="submit" value="upload" />*@
+                                                            <h1>Metadata</h1>
+                                                            <div class="theme-container">
+                                                                <label>Description <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the name of the listing on Mintable - can be the same as the name"></i></label>
+                                                                <input class="theme-input" type="text" id="metadataDescription" name="metadataDescription" value="Made by NFT.net" required>
+                                                            </div>
+                                                            <div class="theme-container">
+                                                                <label>Image Base URI <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                                                <input class="theme-input" type="text" id="metadataImageBaseUri" name="metadataImageBaseUri" value="https://someurl.com/nft" required>
+                                                            </div>
+                                                            <div class="theme-container">
+                                                                <label>External URL <i class="fas fa-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="This is the listing subtitle"></i></label>
+                                                                <input class="theme-input" type="text" id="metadataExternalUrl" name="metadataExternalUrl">
+                                                            </div>
+                                                            <br /> <br />
+                                                        }
                                                         <button email="@User.Identity.Name" id="btn-mintC" type="submit" class="theme-btn">Mint NFT</button>
                                                     </div>
                                                 </div>
