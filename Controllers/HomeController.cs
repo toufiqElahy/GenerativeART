@@ -22,24 +22,19 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using AnimatedGif;
+using GenerativeNFT.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GenerativeNFT.Controllers
 {
     public class HomeController : Controller
     {
-        ////private readonly UserManager<ApplicationUser> _userManager;
-        //private readonly SignInManager<ApplicationUser> _signInManager;
-        ////private readonly ApplicationDbContext _ctx;
-        //public HomeController(SignInManager<ApplicationUser> signInManager)//, UserManager<ApplicationUser> userManager)//, ApplicationDbContext ctx)
-        //{
-        //    //_userManager = userManager;
-        //    _signInManager = signInManager;
-        //    //_ctx = ctx;
-        //}
+        private readonly ApplicationDbContext _context;
         private IWebHostEnvironment Environment;
-        public HomeController(IWebHostEnvironment _environment)//, ILayerService layerService, ICollectionService collectionService, IMetadataService metadataService)
+        public HomeController(IWebHostEnvironment _environment, ApplicationDbContext context)//, ILayerService layerService, ICollectionService collectionService, IMetadataService metadataService)
         {
             Environment = _environment;
+            _context = context;
         }
         public ActionResult GenerativeImages()
         {
@@ -126,7 +121,7 @@ namespace GenerativeNFT.Controllers
             Directory.Move(targetFolder, finalFolder);
             nft.creatorEthAddr= addr;
             nft.email = User.Identity.Name;
-            Nftcrud.nftList.Add(nft);
+            _context.Nft.Add(nft); await _context.SaveChangesAsync();//Nftcrud.nftList.Add(nft);
             return RedirectToAction("Inventory");
         }
         //[HttpPost]
@@ -193,32 +188,32 @@ namespace GenerativeNFT.Controllers
             return View();
         }
 
-        public IActionResult Inventory()
+        public async Task<IActionResult> Inventory()
         {
             if (User.Identity.IsAuthenticated)
             {
                 ViewBag.address = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
             }
                 
-            return View(Nftcrud.nftList.Where(x => x.email == User.Identity.Name).ToList());
+            return View(await _context.Nft.Where(x => x.email == User.Identity.Name).ToListAsync());
         }
-        public IActionResult NftAdminSingle(Guid id)
+        public async Task<IActionResult> NftAdminSingle(Guid id)
         {
-            return View(Nftcrud.nftList.Where(x => x.id == id));
+            return View(await _context.Nft.FirstAsync(x => x.id == id));
         }
-        public IActionResult NftAdmin()
+        public async Task<IActionResult> NftAdmin()
         {
-            return View(Nftcrud.nftList.Where(x=>x.status== "Reviewing").ToList());
+            return View(await _context.Nft.Where(x=>x.status== "Reviewing").ToListAsync());
         }
-        public IActionResult NftStatus(string status,Guid id)
+        public async Task<IActionResult> NftStatus(string status,Guid id)
         {
-            var nft = Nftcrud.nftList.First(x => x.id == id);
+            var nft = await _context.Nft.FirstAsync(x => x.id == id);
             nft.status = status;
             return RedirectToAction("NftAdmin");
         }
         public async Task<IActionResult> NftDelete(Guid id,bool isPublish=false)
         {
-            var nft = Nftcrud.nftList.First(x => x.id == id);
+            var nft = await _context.Nft.FirstAsync(x => x.id == id);
             if (isPublish == false)
             {
                 await PinataService.UnPinAsync(nft.hash);
@@ -228,8 +223,8 @@ namespace GenerativeNFT.Controllers
                     await PinataService.UnPinAsync(nft.secretLink.Replace("ipfs://", "").Split('/')[0]);
                 }
             }
-            
-            Nftcrud.nftList.Remove(nft);
+
+            _context.Nft.Remove(nft);  await _context.SaveChangesAsync();//Nftcrud.nftList.Remove(nft);
             return RedirectToAction("Inventory");
         }
 

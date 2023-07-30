@@ -10,5 +10,6 @@ namespace GenerativeNFT.Data
             : base(options)
         {
         }
+        public DbSet<Nft> Nft { get; set; }
     }
 }

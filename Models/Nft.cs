@@ -11,10 +11,10 @@ namespace GenerativeNFT.Models
         public string name { get; set; }
         public string description { get; set; }
         public string category { get; set; }
-        public string image { get; set; }
-        public string metadata{ get; set; }
-        public string secretLink { get; set; }
-        public string hash { get; set; }
+        public string? image { get; set; }
+        public string? metadata{ get; set; }
+        public string? secretLink { get; set; }
+        public string? hash { get; set; }
         public DateTime dt { get; set; } = DateTime.UtcNow;
         public string creatorEthAddr { get; set; }
         public string email { get; set; }
@@ -23,7 +23,7 @@ namespace GenerativeNFT.Models
 
     public static class Nftcrud
     {
-        public static List<Nft> nftList = new List<Nft>();
+        //public static List<Nft> nftList = new List<Nft>();
 
         public static string customIpfsUrl(string uri)
         {
