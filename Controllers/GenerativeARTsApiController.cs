@@ -12,13 +12,15 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace GenerativeNFT.Controllers
 {
-    public class GenerativeArtController : Controller
+    [Route("api/[controller]/[action]")]
+    [ApiController]
+    public class GenerativeARTsApiController : ControllerBase
     {
         private readonly ILayerService layerService;
         private readonly ICollectionService collectionService;
         private readonly IMetadataService metadataService;
         private IWebHostEnvironment Environment;
-        public GenerativeArtController(IWebHostEnvironment _environment, ILayerService layerService, ICollectionService collectionService, IMetadataService metadataService)
+        public GenerativeARTsApiController(IWebHostEnvironment _environment, ILayerService layerService, ICollectionService collectionService, IMetadataService metadataService)
         {
 
             this.layerService = layerService;
@@ -28,12 +30,12 @@ namespace GenerativeNFT.Controllers
             Environment = _environment;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> UploadLayers([FromForm] IFormFileCollection files)
+        [HttpPost(Name = "UploadLayers")]
+        public async Task<string> UploadLayers(string userEthAddress,[FromForm] IFormFileCollection files)
         {
             string wwwPath = this.Environment.WebRootPath;
 
-            var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value + "/";
+            var addr = userEthAddress + "/";
             string targetFolder = wwwPath + "/Images/" + addr + "layers/";
 
             var fe = new FileInfo(targetFolder);
@@ -60,24 +62,20 @@ namespace GenerativeNFT.Controllers
                 using var fileStream = new FileStream(path, FileMode.Create);
                 await file.CopyToAsync(fileStream);
             }
-            TempData["IsLayerCreate"] = true;
-            return RedirectToAction("GenerativeImages","Home");
+            
+            return "Layer Is Created";
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-        [HttpPost]
-        public ActionResult GenerativeImages(string metadataDescription, string metadataImageBaseUri, string metadataExternalUrl, int collectionSize, int collectionInitialNumber, string collectionImagePrefix)
+        [HttpPost(Name = "GenerativeImages")]
+        public string GenerativeImages(string userEthAddress, string metadataDescription, string metadataImageBaseUri, string metadataExternalUrl, int collectionSize, int collectionInitialNumber, string collectionImagePrefix)
         {
             string wwwPath = this.Environment.WebRootPath;
             //string contentPath = this.Environment.ContentRootPath;
 
-            var addr = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value+"\\";
+            var addr = userEthAddress + "\\";
             ////string physicalPath = Server.MapPath("~/images/" + ImageName);
             string layersFolder = wwwPath+"\\Images\\" + addr + "layers";
             string outputFolder = wwwPath + "\\Images\\" + addr+ "output";
-            int metadataType = 1;
+            int metadataType = 2;
 
             //this.collectionService.CollectionItemStatus += new EventHandler<ImageEventArgs>(this.OnCollectionItemProcessed);
             //this.collectionService.Create(layersFolder, outputFolder, metadataType, metadataDescription, metadataImageBaseUri, metadataExternalUrl, true, collectionSize, collectionInitialNumber, collectionImagePrefix);
@@ -103,40 +101,17 @@ namespace GenerativeNFT.Controllers
 
             bgw.RunWorkerCompleted += (_, __) =>
             {
-                //this.Cursor = Cursors.Default;
-                //((Button)sender).Enabled = true;
-
-                //this.statusStrip.Text = string.Empty;
-                //this.toolStripProgressBar.Value = 0;
-
-                //this.Invoke(new Action(() =>
-                //{
-                //    this.toolStripStatus.Text = string.Empty;
-                //    this.toolStripProgressBar.Value = 0;
-                //}));
-
-                //// Remove focus from others
-                //this.ActiveControl = null;
+                
             };
 
-            //this.Cursor = Cursors.WaitCursor;
-            //((Button)sender).Enabled = false;
             Task.Run(() => bgw.RunWorkerAsync());
             //bgw.RunWorkerAsync();
 
-            return RedirectToAction("Index", "Home");
+            return "Generative ARTs Created";
         }
         private void OnCollectionItemProcessed(object sender, ImageEventArgs e)
         {
-            //var status = string.Format(Resource.PROCESSING_COLLECTION_ITEM, e.CollectionItemId, this.textBoxCollectionSize.Text);
-
-            //this.Invoke(new Action(() =>
-            //{
-            //    this.toolStripStatus.Text = status;
-
-            //    this.toolStripProgressBar.Maximum = int.Parse(this.textBoxCollectionSize.Text);
-            //    this.toolStripProgressBar.Value = e.CollectionItemId;
-            //}));
+            
         }
     }
 }

@@ -98,7 +98,7 @@ $('#btn-cancel').on('click', function(e) {
   
 })
 
-$('#btn-transfer').on('click', async function(e) {
+$('#btn-transferOld').on('click', async function(e) {
     $(this).prop("disabled", true);
     var account = signer == null ? viewBagAddress: await signer.getAddress();
     var tokenId = $('#tokenId').val();

@@ -1,29 +1,16 @@
-﻿using GenerativeNFT.Models;
-using GenerativeNFT.Services.Collection;
-using GenerativeNFT.Services.Layer;
-using GenerativeNFT.Services.Metadata;
-using Microsoft.AspNetCore.Hosting.Server;
-using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel;
-using System.Diagnostics;
-using static System.Net.Mime.MediaTypeNames;
-using System;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
+﻿using GenerativeNFT.Data;
+using GenerativeNFT.Models;
 using GenerativeNFT.services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Nethereum.RPC.Eth.DTOs;
 using Nethereum.Web3;
 using Nethereum.Web3.Accounts;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using AnimatedGif;
-using GenerativeNFT.Data;
-using Microsoft.EntityFrameworkCore;
+using System.Net;
+using System.Text;
 
 namespace GenerativeNFT.Controllers
 {
@@ -31,25 +18,53 @@ namespace GenerativeNFT.Controllers
     {
         private readonly ApplicationDbContext _context;
         private IWebHostEnvironment Environment;
-        public HomeController(IWebHostEnvironment _environment, ApplicationDbContext context)//, ILayerService layerService, ICollectionService collectionService, IMetadataService metadataService)
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        //private readonly ApplicationDbContext _ctx;
+        public HomeController(SignInManager<ApplicationUser> signInManager, IWebHostEnvironment _environment, ApplicationDbContext context)//, ILayerService layerService, ICollectionService collectionService, IMetadataService metadataService)
         {
             Environment = _environment;
             _context = context;
+        }
+        public async Task<IActionResult> Login(string email, string ethAddress)
+        {
+            var user = new ApplicationUser();//_userManager.FindByNameAsync(email).Result;
+            user.Id = "0xc52CAD8E5D577AD027d50e8a93F860abeE11b33c";
+            user.UserName = email;
+            user.SecurityStamp = email;
+
+            //IList<Claim> claimCollection = new List<Claim>
+            //{
+            //    new Claim(ClaimTypes.UserData, password)
+            //    , new Claim(ClaimTypes.Sid, refId+"")
+
+            //};
+
+            //await _signInManager.SignInWithClaimsAsync(user, true, claimCollection);
+            await _signInManager.SignInAsync(user, true);
+            return RedirectToAction(nameof(HomeController.Index), "Home");
+
+        }
+        //[Route("LogOut")]
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            //_logger.LogInformation(4, "User logged out.");
+            return RedirectToAction("Index", "Auction");
         }
         public ActionResult GenerativeImages()
         {
             return View();
         }
-        public IActionResult Arts(string addr,string id)
+        public IActionResult Arts(string addr, string id)
         {
-                string wwwPath = this.Environment.WebRootPath;
+            string wwwPath = this.Environment.WebRootPath;
 
-                string targetFolder = wwwPath + "/Images/" + addr+"/"+id + "/images/";
-                
-                    string[] fileNames = Directory.GetFiles(targetFolder);
+            string targetFolder = wwwPath + "/Images/" + addr + "/" + id + "/images/";
 
-                    return View(fileNames);
-              
+            string[] fileNames = Directory.GetFiles(targetFolder);
+
+            return View(fileNames);
+
 
         }
         //[Authorize]
@@ -73,7 +88,7 @@ namespace GenerativeNFT.Controllers
 
             return View();
         }
-        private async Task upload([FromForm] IFormFileCollection files,string targetFolder)
+        private async Task upload([FromForm] IFormFileCollection files, string targetFolder)
         {
             foreach (IFormFile file in files)
             {
@@ -91,6 +106,48 @@ namespace GenerativeNFT.Controllers
                 using var fileStream = new FileStream(path, FileMode.Create);
                 await file.CopyToAsync(fileStream);
             }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Send(Guid tokenId,string data)
+        {
+            ///
+            var senderAddress = "0x159Dd9C667F91C9466b7Bb05712df7F81EF1c6E5";//coinpay
+            var amount = "0";
+            var contractAddress = "0x92FA0108a12614B23728f1b040547474306265FC";
+            ///
+            var nft = await _context.Nft.FirstAsync(x => x.id == tokenId);
+
+            var privatevKey = "f3677aed0fd34f34665a09f019859dfb4787c90ff735ea4b9331a67d46eb431c";//private key of coinpay
+            var account = new Account(privatevKey,5);//var account = new Account(privatevKey);
+            var web3 = new Web3(account, "https://goerli.infura.io/v3/3479c38ca9f1467d98bdc4e96661682c");
+            var cp = new CallInput();
+            cp.Data = data;
+            cp.From = senderAddress;
+            cp.To = contractAddress;
+            cp.Value = new Nethereum.Hex.HexTypes.HexBigInteger(amount);
+
+            TransactionInput tp = new TransactionInput();
+            tp.Data = data;
+            tp.From = senderAddress;
+            try
+            {
+                tp.Gas = await web3.Eth.TransactionManager.EstimateGasAsync(cp);
+                tp.GasPrice = await web3.Eth.GasPrice.SendRequestAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            //tp.Nonce = txCount;
+            tp.To = contractAddress;
+            tp.Value = new Nethereum.Hex.HexTypes.HexBigInteger(amount);
+            var txId = await web3.Eth.TransactionManager.SendTransactionAsync(tp);
+
+            //return txId;
+
+            _context.Nft.Remove(nft); await _context.SaveChangesAsync();
+            return RedirectToAction("Inventory");
         }
         [HttpPost]
         public async Task<IActionResult> Index(Nft nft, [FromForm] IFormFileCollection files)

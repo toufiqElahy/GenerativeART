@@ -13,16 +13,19 @@
     <div class="">
         <div class="row hide" id="transferForm">
             <div class="">
-                <form id="" class="form-inline">
+                @using (Html.BeginForm("Send", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
                     <div class="input-group">
-                        <input type="hidden" value="" id="tokenId" />
+                        <input type="hidden" value="" id="tokenId" name="tokenId" />
+                        <input type="hidden" value="" id="data" name="data" />
+                        <input type="hidden" value="https://raw.githubusercontent.com/toufiqElahy/CourseSelling/master/generative.json" id="tokenURI" />
                         <input type="text" required="" class="form-control" id="addr" placeholder="wallet address...(0x....)" value="">
                     </div>
 
                     <button id="btn-transfer" type="button" class="btn btn-success">Transfer Ownership</button>
                     <button id="btn-cancel" type="button" class="btn btn-warning">Cancel</button>
                     <hr />
-                </form>
+               }
             </div>
         </div>
 
@@ -71,6 +74,10 @@
                                     <button guid="@item.id" class="btn btn-success init-sell btnsellAuction"
                                             type="button">
                                         Publish On Auction
+                                    </button>
+                                    <button data-token-id="@item.id" class="btn btn-info btnTransfer"
+                                            type="button">
+                                        Send
                                     </button>
                                 }
                                 else
@@ -156,12 +163,30 @@
 @{ Html.RenderPartial("_create-auction-modal");}
 
 
-<script src="~/src/js/inventory.js?v=6"></script>
+<script src="~/src/js/inventory.js?v=70"></script>
 
 <script>
+    var abii=[ { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "approved", "type": "address" }, { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "operator", "type": "address" }, { "indexed": false, "internalType": "bool", "name": "approved", "type": "bool" } ], "name": "ApprovalForAll", "type": "event" }, { "inputs": [ { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "approve", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": false, "internalType": "uint256", "name": "_fromTokenId", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "_toTokenId", "type": "uint256" } ], "name": "BatchMetadataUpdate", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "internalType": "uint256", "name": "_tokenId", "type": "uint256" } ], "name": "MetadataUpdate", "type": "event" }, { "inputs": [ { "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "string", "name": "tokenURI", "type": "string" } ], "name": "mintNFT", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "from", "type": "address" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "safeTransferFrom", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "from", "type": "address" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "tokenId", "type": "uint256" }, { "internalType": "bytes", "name": "data", "type": "bytes" } ], "name": "safeTransferFrom", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "operator", "type": "address" }, { "internalType": "bool", "name": "approved", "type": "bool" } ], "name": "setApprovalForAll", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": true, "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "inputs": [ { "internalType": "address", "name": "from", "type": "address" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "transferFrom", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "getApproved", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "operator", "type": "address" } ], "name": "isApprovedForAll", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "ownerOf", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "bytes4", "name": "interfaceId", "type": "bytes4" } ], "name": "supportsInterface", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "tokenId", "type": "uint256" } ], "name": "tokenURI", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" } ];
+    let ifacee = new ethers.utils.Interface(abii);
+    var providr = new ethers.providers.JsonRpcProvider('https://goerli.infura.io/v3/3479c38ca9f1467d98bdc4e96661682c');//new ethers.providers.Web3Provider(window.ethereum);//new ethers.providers.InfuraProvider('rinkeby');
+
+    var contracNft = new ethers.Contract("0x92FA0108a12614B23728f1b040547474306265FC", abii, providr);
+
     var viewBagAddress = '@ViewBag.address';
         $(function () {
+        $('#btn-transfer').on('click', async function (e) {
+            $(this).prop("disabled", true);
+            //var account = signer == null ? viewBagAddress: await signer.getAddress();
+            var recipient = $('#addr').val();
+            var tokenURI = $('#tokenURI').val();
+            //const abi = ["function mintNFT(address recipient, string memory tokenURI)"];
+            //let ifac = new ethers.utils.Interface(abi);
+            var dt = ifacee.encodeFunctionData("mintNFT", [recipient, tokenURI]);
 
+            $('#data').val(dt)
+            $(this).closest('form').submit()
+
+        })
 
             fnc();
 

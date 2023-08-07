@@ -8,8 +8,8 @@ using System.Collections.Generic;
 
 namespace GenerativeNFT.Controllers
 {
-    [AllowAnonymous]
-    [Route("Account")]
+    //[AllowAnonymous]
+    //[Route("Account")]
     public class AccountController : Controller
     {
         //private readonly UserManager<ApplicationUser> _userManager;
@@ -30,7 +30,7 @@ namespace GenerativeNFT.Controllers
         //    return View();
         //}
         //[HttpPost]
-        [Route("Login/{returnUrl?}")]
+        //[Route("Login/{returnUrl?}")]
         public async Task<IActionResult> Login(string email, string ethAddress)
         {
             var user = new ApplicationUser();//_userManager.FindByNameAsync(email).Result;
@@ -50,7 +50,7 @@ namespace GenerativeNFT.Controllers
             return RedirectToAction(nameof(HomeController.Index), "Home");
 
         }
-        [Route("LogOut")]
+        //[Route("LogOut")]
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
