@@ -189,32 +189,6 @@
         })
 
             fnc();
-        const accNumberRow = $('#accNumberRow');
-        const accNumberTemplate = $('#accNumberTemplate')
-        $.get('https://testnets-api.opensea.io/api/v1/assets?owner=@ViewBag.address&order_direction=desc&offset=0&limit=20', function (data) {
-            console.log(data)
-            for (let i = 0; i < data.assets.length; i++) {
-                console.log(data.assets[i].asset_contract.address)
-                accNumberTemplate.find('.panel-body .number').html('<img src="' + data.assets[i].image_url + '" height="200px" alt="image" class="img-fluid img-thumbnail" /> <br> <a href="' + data.assets[i].image_url + '" target="_blank">Digital Content Link</a>')
-                var number = data.assets[i].token_id;
-
-                //accNumberTemplate.find('.panel-body .number').text(formattedNumber)
-                console.log('bbgg' + number)
-                //accNumberTemplate.find('.panel-number .number').attr('data-token-id', number)
-                ////accNumberTemplate.find('.panel-number button').attr('data-token-id', number)
-                accNumberTemplate.find('.user-theme-title').html(data.assets[i].name);
-                accNumberTemplate.find('.theme-description').html(data.assets[i].description)
-
-                accNumberTemplate.find('.btnsellAuction').hide().attr('data-token-id', number);
-                accNumberTemplate.find('.btndelAuction').hide().attr('data-token-id', number);
-                accNumberTemplate.find('.btnSellToBidder').hide().attr('data-token-id', number);
-                accNumberTemplate.find('.btnTransfer').hide().attr('data-token-id', number);
-                accNumberTemplate.find('.btnDelete').hide().attr('data-token-id', number);
-                accNumberRow.append(accNumberTemplate.html()); $('#Loading').html('');
-            }
-            
-        });
-
 
         });
 

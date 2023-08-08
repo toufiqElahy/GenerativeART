@@ -244,7 +244,15 @@ namespace GenerativeNFT.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> CollectedNFTs()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                ViewBag.address = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value;
+            }
 
+            return View();
+        }
         public async Task<IActionResult> Inventory()
         {
             if (User.Identity.IsAuthenticated)
